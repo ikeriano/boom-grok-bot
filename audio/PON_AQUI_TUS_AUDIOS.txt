@@ -1,0 +1,3 @@
+Pon aquí tu música y efectos (mp3/ogg/wav/m4a). Nombres reconocidos: ver LEEME.txt.
+Música de cabecera: cabecera_antena3.mp3, cabecera_cuatro.mp3 o cabecera.mp3.
+Voces del presentador (opcional): crea la carpeta audio/voz/ con hist_1.mp3, hist_2.mp3…

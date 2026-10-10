@@ -1,0 +1,1821 @@
+{
+ "caliente": [
+  {
+   "d": "Plato típico español hecho con huevos y patatas",
+   "f": "{1} de {2}",
+   "a": [
+    "tortilla",
+    "sopa",
+    "crema"
+   ],
+   "ra": 0,
+   "b": [
+    "patatas",
+    "verduras",
+    "arroz"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Pan rectangular y blando que se vende en rebanadas",
+   "f": "{1} de {2}",
+   "a": [
+    "bizcocho",
+    "pan",
+    "torta"
+   ],
+   "ra": 1,
+   "b": [
+    "horno",
+    "leña",
+    "molde"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Ventana redonda de los barcos",
+   "f": "{1} de {2}",
+   "a": [
+    "ojo",
+    "boca",
+    "puerta"
+   ],
+   "ra": 0,
+   "b": [
+    "pez",
+    "buey",
+    "gato"
+   ],
+   "rb": 1
+  },
+  {
+   "d": "Gigantesco engaño de madera de la mitología griega",
+   "f": "{1} de {2}",
+   "a": [
+    "toro",
+    "carro",
+    "caballo"
+   ],
+   "ra": 2,
+   "b": [
+    "Troya",
+    "Esparta",
+    "Atenas"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Se dice de algo muy esperado y beneficioso",
+   "f": "{1} de {2}",
+   "a": [
+    "sol",
+    "agua",
+    "viento"
+   ],
+   "ra": 1,
+   "b": [
+    "enero",
+    "abril",
+    "mayo"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Animal marino con forma de cinco brazos",
+   "f": "{1} de {2}",
+   "a": [
+    "estrella",
+    "flor",
+    "luna"
+   ],
+   "ra": 0,
+   "b": [
+    "río",
+    "lago",
+    "mar"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Herramienta ajustable para apretar tuercas",
+   "f": "{1} {2}",
+   "a": [
+    "sierra",
+    "llave",
+    "lima"
+   ],
+   "ra": 1,
+   "b": [
+    "inglesa",
+    "francesa",
+    "alemana"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Forma cariñosa de llamar a la pareja ideal",
+   "f": "{1} {2}",
+   "a": [
+    "gran",
+    "dulce",
+    "media"
+   ],
+   "ra": 2,
+   "b": [
+    "naranja",
+    "manzana",
+    "pera"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Viaje de los recién casados",
+   "f": "{1} de {2}",
+   "a": [
+    "noche",
+    "luna",
+    "tarde"
+   ],
+   "ra": 1,
+   "b": [
+    "plata",
+    "azúcar",
+    "miel"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Punto débil de una persona",
+   "f": "{1} de {2}",
+   "a": [
+    "talón",
+    "rodilla",
+    "codo"
+   ],
+   "ra": 0,
+   "b": [
+    "Hércules",
+    "Aquiles",
+    "Ulises"
+   ],
+   "rb": 1
+  },
+  {
+   "d": "Cuento de Andersen sobre un ave que resulta ser un cisne",
+   "f": "El {1} {2}",
+   "a": [
+    "pollito",
+    "gatito",
+    "patito"
+   ],
+   "ra": 2,
+   "b": [
+    "feo",
+    "triste",
+    "perdido"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Juego de lanzar una moneda al aire",
+   "f": "{1} o {2}",
+   "a": [
+    "cara",
+    "rey",
+    "sol"
+   ],
+   "ra": 0,
+   "b": [
+    "reina",
+    "luna",
+    "cruz"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Fenómeno de meteoros que cruzan el cielo nocturno",
+   "f": "{1} de {2}",
+   "a": [
+    "nube",
+    "lluvia",
+    "río"
+   ],
+   "ra": 1,
+   "b": [
+    "estrellas",
+    "planetas",
+    "lunas"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Construcción bíblica en la que surgieron las distintas lenguas",
+   "f": "{1} de {2}",
+   "a": [
+    "puerta",
+    "casa",
+    "torre"
+   ],
+   "ra": 2,
+   "b": [
+    "Belén",
+    "Babel",
+    "Roma"
+   ],
+   "rb": 1
+  },
+  {
+   "d": "Punto estrecho que frena un proceso",
+   "f": "{1} de {2}",
+   "a": [
+    "cuello",
+    "pie",
+    "brazo"
+   ],
+   "ra": 0,
+   "b": [
+    "jarra",
+    "botella",
+    "taza"
+   ],
+   "rb": 1
+  },
+  {
+   "d": "Espectáculo de cohetes y luces de colores en el cielo",
+   "f": "{1} {2}",
+   "a": [
+    "juegos",
+    "fuegos",
+    "rayos"
+   ],
+   "ra": 1,
+   "b": [
+    "eléctricos",
+    "nocturnos",
+    "artificiales"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Persona que destaca negativamente en su familia",
+   "f": "{1} {2}",
+   "a": [
+    "oveja",
+    "cabra",
+    "vaca"
+   ],
+   "ra": 0,
+   "b": [
+    "negra",
+    "blanca",
+    "loca"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Ave que golpea los troncos con el pico",
+   "f": "{1} {2}",
+   "a": [
+    "gallo",
+    "pájaro",
+    "pato"
+   ],
+   "ra": 1,
+   "b": [
+    "herrero",
+    "cartero",
+    "carpintero"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Región del espacio de la que ni la luz puede escapar",
+   "f": "{1} {2}",
+   "a": [
+    "pozo",
+    "túnel",
+    "agujero"
+   ],
+   "ra": 2,
+   "b": [
+    "negro",
+    "rojo",
+    "blanco"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Objeto que usan los adivinos para ver el futuro",
+   "f": "{1} de {2}",
+   "a": [
+    "bola",
+    "caja",
+    "copa"
+   ],
+   "ra": 0,
+   "b": [
+    "plata",
+    "cristal",
+    "oro"
+   ],
+   "rb": 1
+  },
+  {
+   "d": "Reunión en la que varias personas debaten",
+   "f": "{1} {2}",
+   "a": [
+    "silla",
+    "mesa",
+    "rueda"
+   ],
+   "ra": 1,
+   "b": [
+    "redonda",
+    "larga",
+    "alta"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Persona que pasa mucho tiempo leyendo y estudiando",
+   "f": "{1} de {2}",
+   "a": [
+    "gato",
+    "búho",
+    "ratón"
+   ],
+   "ra": 2,
+   "b": [
+    "biblioteca",
+    "museo",
+    "oficina"
+   ],
+   "rb": 0
+  },
+  {
+   "d": "Marinero con mucha experiencia",
+   "f": "{1} de {2}",
+   "a": [
+    "perro",
+    "lobo",
+    "oso"
+   ],
+   "ra": 1,
+   "b": [
+    "puerto",
+    "barco",
+    "mar"
+   ],
+   "rb": 2
+  },
+  {
+   "d": "Dulce navideño blando de almendra, típico de la provincia de Alicante",
+   "f": "{1} de {2}",
+   "a": [
+    "turrón",
+    "mazapán",
+    "polvorón"
+   ],
+   "ra": 0,
+   "b": [
+    "chocolate",
+    "Jijona",
+    "coco"
+   ],
+   "rb": 1
+  }
+ ],
+ "cables4": [
+  {
+   "p": "¿Cuál es la capital de Australia?",
+   "op": [
+    "Sídney",
+    "Melbourne",
+    "Canberra",
+    "Perth"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuántos jugadores tiene un equipo de baloncesto en la pista?",
+   "op": [
+    "5",
+    "6",
+    "7",
+    "11"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué planeta es conocido como el planeta rojo?",
+   "op": [
+    "Venus",
+    "Marte",
+    "Júpiter",
+    "Saturno"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Quién escribió «La casa de Bernarda Alba»?",
+   "op": [
+    "García Lorca",
+    "Machado",
+    "Valle-Inclán",
+    "Unamuno"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué año llegó el ser humano a la Luna?",
+   "op": [
+    "1965",
+    "1969",
+    "1972",
+    "1975"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué río pasa por Sevilla?",
+   "op": [
+    "Ebro",
+    "Tajo",
+    "Guadalquivir",
+    "Duero"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuál es el océano más grande del planeta?",
+   "op": [
+    "Atlántico",
+    "Índico",
+    "Pacífico",
+    "Ártico"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué instrumento tiene normalmente 88 teclas?",
+   "op": [
+    "Órgano",
+    "Piano",
+    "Acordeón",
+    "Arpa"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es el metal más abundante en la corteza terrestre?",
+   "op": [
+    "Hierro",
+    "Aluminio",
+    "Cobre",
+    "Oro"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Quién pintó «Las Meninas»?",
+   "op": [
+    "Goya",
+    "El Greco",
+    "Velázquez",
+    "Murillo"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuántos lados tiene un hexágono?",
+   "op": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿En qué país están las pirámides de Guiza?",
+   "op": [
+    "México",
+    "Perú",
+    "Egipto",
+    "Sudán"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué gas necesitamos respirar para vivir?",
+   "op": [
+    "Nitrógeno",
+    "Oxígeno",
+    "Helio",
+    "Hidrógeno"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es el animal terrestre más rápido?",
+   "op": [
+    "León",
+    "Guepardo",
+    "Caballo",
+    "Gacela"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿En qué ciudad está la Sagrada Familia?",
+   "op": [
+    "Madrid",
+    "Valencia",
+    "Barcelona",
+    "Bilbao"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué idioma se habla oficialmente en Brasil?",
+   "op": [
+    "Español",
+    "Portugués",
+    "Francés",
+    "Italiano"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuántos minutos son una hora y media?",
+   "op": [
+    "60",
+    "80",
+    "90",
+    "120"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Quién compuso «Las cuatro estaciones»?",
+   "op": [
+    "Vivaldi",
+    "Mozart",
+    "Bach",
+    "Beethoven"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué órgano bombea la sangre por el cuerpo?",
+   "op": [
+    "Pulmón",
+    "Hígado",
+    "Corazón",
+    "Riñón"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuál es el símbolo químico del oro?",
+   "op": [
+    "Ag",
+    "Au",
+    "Or",
+    "Fe"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es la isla más grande de Canarias?",
+   "op": [
+    "Gran Canaria",
+    "Tenerife",
+    "Lanzarote",
+    "Fuerteventura"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿En qué deporte se usa un «tee»?",
+   "op": [
+    "Tenis",
+    "Golf",
+    "Hockey",
+    "Polo"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué continente tiene más países?",
+   "op": [
+    "Asia",
+    "Europa",
+    "África",
+    "América"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cómo se llama la cría del caballo?",
+   "op": [
+    "Ternero",
+    "Potro",
+    "Cordero",
+    "Lechón"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es la montaña más alta de España?",
+   "op": [
+    "Mulhacén",
+    "Teide",
+    "Aneto",
+    "Veleta"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué escritor creó a Sherlock Holmes?",
+   "op": [
+    "Agatha Christie",
+    "Arthur Conan Doyle",
+    "Edgar Allan Poe",
+    "Charles Dickens"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuántos huesos tiene aproximadamente un adulto?",
+   "op": [
+    "106",
+    "206",
+    "306",
+    "186"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué moneda se usaba en España antes del euro?",
+   "op": [
+    "Escudo",
+    "Peseta",
+    "Lira",
+    "Franco"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿En qué año cayó el Muro de Berlín?",
+   "op": [
+    "1985",
+    "1989",
+    "1991",
+    "1993"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué color sale al mezclar azul y amarillo?",
+   "op": [
+    "Verde",
+    "Morado",
+    "Naranja",
+    "Marrón"
+   ],
+   "r": 0
+  }
+ ],
+ "cables5": [
+  {
+   "p": "¿Qué planeta está más cerca del Sol?",
+   "op": [
+    "Venus",
+    "Mercurio",
+    "Tierra",
+    "Marte",
+    "Júpiter"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es el río más largo de la península ibérica?",
+   "op": [
+    "Ebro",
+    "Duero",
+    "Tajo",
+    "Guadiana",
+    "Guadalquivir"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Quién escribió «Cien años de soledad»?",
+   "op": [
+    "Vargas Llosa",
+    "García Márquez",
+    "Cortázar",
+    "Borges",
+    "Neruda"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es la capital de Canadá?",
+   "op": [
+    "Toronto",
+    "Montreal",
+    "Vancouver",
+    "Ottawa",
+    "Quebec"
+   ],
+   "r": 3
+  },
+  {
+   "p": "¿Cuántos jugadores de un equipo de fútbol hay en el campo?",
+   "op": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué elemento químico tiene el símbolo «Na»?",
+   "op": [
+    "Nitrógeno",
+    "Sodio",
+    "Neón",
+    "Níquel",
+    "Potasio"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿En qué ciudad se encuentra la Alhambra?",
+   "op": [
+    "Córdoba",
+    "Sevilla",
+    "Granada",
+    "Málaga",
+    "Toledo"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Quién pintó el «Guernica»?",
+   "op": [
+    "Dalí",
+    "Miró",
+    "Picasso",
+    "Sorolla",
+    "Goya"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuál es el país más grande del mundo por superficie?",
+   "op": [
+    "China",
+    "EE. UU.",
+    "Canadá",
+    "Rusia",
+    "Brasil"
+   ],
+   "r": 3
+  },
+  {
+   "p": "¿Cuántas cuerdas tiene una guitarra española clásica?",
+   "op": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "12"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿En qué año se celebraron los Juegos Olímpicos de Barcelona?",
+   "op": [
+    "1988",
+    "1990",
+    "1992",
+    "1994",
+    "1996"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué mar baña la ciudad de Valencia?",
+   "op": [
+    "Cantábrico",
+    "Mediterráneo",
+    "Egeo",
+    "Adriático",
+    "Báltico"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es el hueso más largo del cuerpo humano?",
+   "op": [
+    "Húmero",
+    "Tibia",
+    "Fémur",
+    "Peroné",
+    "Radio"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuál es el animal más grande del planeta?",
+   "op": [
+    "Elefante africano",
+    "Ballena azul",
+    "Cachalote",
+    "Jirafa",
+    "Orca"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué número representa la letra romana D?",
+   "op": [
+    "50",
+    "100",
+    "500",
+    "1000",
+    "5000"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuál de estos es un gas noble?",
+   "op": [
+    "Oxígeno",
+    "Argón",
+    "Cloro",
+    "Flúor",
+    "Hidrógeno"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué capital está atravesada por el río Danubio?",
+   "op": [
+    "Praga",
+    "Budapest",
+    "Varsovia",
+    "Berlín",
+    "Roma"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué ciudad española es conocida como «la Ciudad Condal»?",
+   "op": [
+    "Madrid",
+    "Barcelona",
+    "Valencia",
+    "Zaragoza",
+    "Bilbao"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Quién pintó «La noche estrellada»?",
+   "op": [
+    "Monet",
+    "Van Gogh",
+    "Renoir",
+    "Cézanne",
+    "Degas"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué lengua tiene más hablantes nativos del mundo?",
+   "op": [
+    "Inglés",
+    "Español",
+    "Chino mandarín",
+    "Hindi",
+    "Árabe"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Cuántos grados suman los ángulos de un triángulo?",
+   "op": [
+    "90",
+    "120",
+    "180",
+    "270",
+    "360"
+   ],
+   "r": 2
+  },
+  {
+   "p": "¿Qué océano baña las costas de Galicia?",
+   "op": [
+    "Atlántico",
+    "Pacífico",
+    "Índico",
+    "Ártico",
+    "Antártico"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué país nació la pizza margarita?",
+   "op": [
+    "Francia",
+    "Italia",
+    "Grecia",
+    "España",
+    "EE. UU."
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué tipo de animal es la tortuga?",
+   "op": [
+    "Anfibio",
+    "Reptil",
+    "Mamífero",
+    "Pez",
+    "Ave"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué día se celebra la festividad de los Reyes Magos?",
+   "op": [
+    "1 de enero",
+    "6 de enero",
+    "25 de diciembre",
+    "19 de marzo",
+    "2 de febrero"
+   ],
+   "r": 1
+  }
+ ],
+ "estrategica": [
+  {
+   "t": "Países de Sudamérica",
+   "ok": [
+    "Perú",
+    "Chile",
+    "Colombia",
+    "Uruguay",
+    "Paraguay",
+    "Bolivia",
+    "Ecuador"
+   ],
+   "ko": [
+    "México",
+    "Cuba",
+    "Panamá"
+   ]
+  },
+  {
+   "t": "Planetas del sistema solar",
+   "ok": [
+    "Mercurio",
+    "Venus",
+    "Marte",
+    "Júpiter",
+    "Saturno",
+    "Urano",
+    "Neptuno"
+   ],
+   "ko": [
+    "Plutón",
+    "Luna",
+    "Sol"
+   ]
+  },
+  {
+   "t": "Comunidades autónomas con costa",
+   "ok": [
+    "Galicia",
+    "Asturias",
+    "Cantabria",
+    "Andalucía",
+    "Murcia",
+    "Cataluña",
+    "C. Valenciana"
+   ],
+   "ko": [
+    "Aragón",
+    "Castilla-La Mancha",
+    "Extremadura"
+   ]
+  },
+  {
+   "t": "Obras de Shakespeare",
+   "ok": [
+    "Hamlet",
+    "Otelo",
+    "Macbeth",
+    "El rey Lear",
+    "Romeo y Julieta",
+    "La tempestad",
+    "Julio César"
+   ],
+   "ko": [
+    "Fausto",
+    "El Quijote",
+    "La Celestina"
+   ]
+  },
+  {
+   "t": "Mamíferos",
+   "ok": [
+    "Delfín",
+    "Murciélago",
+    "Ballena",
+    "Ornitorrinco",
+    "Elefante",
+    "Caballo",
+    "Canguro"
+   ],
+   "ko": [
+    "Tiburón",
+    "Pingüino",
+    "Cocodrilo"
+   ]
+  },
+  {
+   "t": "Instrumentos de cuerda",
+   "ok": [
+    "Violín",
+    "Viola",
+    "Violonchelo",
+    "Contrabajo",
+    "Guitarra",
+    "Arpa",
+    "Laúd"
+   ],
+   "ko": [
+    "Flauta",
+    "Oboe",
+    "Timbal"
+   ]
+  },
+  {
+   "t": "Capitales europeas",
+   "ok": [
+    "Lisboa",
+    "Viena",
+    "Praga",
+    "Dublín",
+    "Oslo",
+    "Atenas",
+    "Varsovia"
+   ],
+   "ko": [
+    "Oporto",
+    "Milán",
+    "Ginebra"
+   ]
+  },
+  {
+   "t": "Colores del arcoíris",
+   "ok": [
+    "Rojo",
+    "Naranja",
+    "Amarillo",
+    "Verde",
+    "Azul",
+    "Añil",
+    "Violeta"
+   ],
+   "ko": [
+    "Rosa",
+    "Marrón",
+    "Blanco"
+   ]
+  },
+  {
+   "t": "Elementos químicos metálicos",
+   "ok": [
+    "Hierro",
+    "Cobre",
+    "Plata",
+    "Sodio",
+    "Zinc",
+    "Aluminio",
+    "Mercurio"
+   ],
+   "ko": [
+    "Oxígeno",
+    "Azufre",
+    "Neón"
+   ]
+  },
+  {
+   "t": "Deportes olímpicos de verano",
+   "ok": [
+    "Atletismo",
+    "Natación",
+    "Judo",
+    "Remo",
+    "Esgrima",
+    "Tenis",
+    "Baloncesto"
+   ],
+   "ko": [
+    "Esquí",
+    "Curling",
+    "Bobsleigh"
+   ]
+  }
+ ],
+ "desempate": [
+  {
+   "t": "Islas españolas",
+   "ok": [
+    "Mallorca",
+    "Menorca",
+    "Ibiza",
+    "Tenerife",
+    "La Palma",
+    "Lanzarote"
+   ],
+   "ko": [
+    "Madeira",
+    "Córcega",
+    "Cerdeña",
+    "Malta"
+   ]
+  },
+  {
+   "t": "Frutas",
+   "ok": [
+    "Mango",
+    "Kiwi",
+    "Papaya",
+    "Melocotón",
+    "Ciruela",
+    "Granada"
+   ],
+   "ko": [
+    "Zanahoria",
+    "Calabacín",
+    "Puerro",
+    "Espárrago"
+   ]
+  },
+  {
+   "t": "Números primos",
+   "ok": [
+    "2",
+    "3",
+    "5",
+    "7",
+    "11",
+    "13"
+   ],
+   "ko": [
+    "9",
+    "15",
+    "21",
+    "1"
+   ]
+  },
+  {
+   "t": "Ciudades andaluzas",
+   "ok": [
+    "Cádiz",
+    "Huelva",
+    "Jaén",
+    "Almería",
+    "Córdoba",
+    "Granada"
+   ],
+   "ko": [
+    "Murcia",
+    "Badajoz",
+    "Albacete",
+    "Ciudad Real"
+   ]
+  }
+ ],
+ "clasificatoria": [
+  {
+   "p": "¿El Sol es una estrella o un planeta?",
+   "op": [
+    "Estrella",
+    "Planeta"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuál es más grande, la Tierra o Marte?",
+   "op": [
+    "La Tierra",
+    "Marte"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿La capital de Portugal es Lisboa u Oporto?",
+   "op": [
+    "Lisboa",
+    "Oporto"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿El Everest está en el Himalaya o en los Andes?",
+   "op": [
+    "Himalaya",
+    "Andes"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántas patas tiene una araña?",
+   "op": [
+    "6",
+    "8"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Quién escribió el Quijote?",
+   "op": [
+    "Cervantes",
+    "Quevedo"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿A cuántos grados hierve el agua a nivel del mar?",
+   "op": [
+    "100 ºC",
+    "90 ºC"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿El delfín es un pez o un mamífero?",
+   "op": [
+    "Pez",
+    "Mamífero"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuántos días tiene un año bisiesto?",
+   "op": [
+    "366",
+    "365"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué país está Roma?",
+   "op": [
+    "Italia",
+    "Grecia"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué isla está el Teide?",
+   "op": [
+    "Tenerife",
+    "Gran Canaria"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Quién pintó la Gioconda?",
+   "op": [
+    "Leonardo da Vinci",
+    "Miguel Ángel"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Puede volar el pingüino?",
+   "op": [
+    "Sí",
+    "No"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Qué mes tiene 31 días?",
+   "op": [
+    "Abril",
+    "Mayo"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿Cuál es la fórmula del agua?",
+   "op": [
+    "H2O",
+    "CO2"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Júpiter es un planeta gaseoso o rocoso?",
+   "op": [
+    "Gaseoso",
+    "Rocoso"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántos gramos tiene un kilo?",
+   "op": [
+    "1.000",
+    "100"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿El flamenco es típico de Andalucía o de Galicia?",
+   "op": [
+    "Andalucía",
+    "Galicia"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cada cuántos años hay Juegos Olímpicos de verano?",
+   "op": [
+    "4",
+    "2"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Por dónde respira la ballena?",
+   "op": [
+    "Pulmones",
+    "Branquias"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué ciudad está el Museo del Prado?",
+   "op": [
+    "Madrid",
+    "Barcelona"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué pesa más, un kilo de hierro o un kilo de paja?",
+   "op": [
+    "Pesan lo mismo",
+    "El hierro"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué ciudad está el Big Ben?",
+   "op": [
+    "Londres",
+    "París"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Tiene luz propia la Luna?",
+   "op": [
+    "Sí",
+    "No"
+   ],
+   "r": 1
+  },
+  {
+   "p": "¿El cóndor es un ave o un reptil?",
+   "op": [
+    "Ave",
+    "Reptil"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué ciudad está la Torre Eiffel?",
+   "op": [
+    "París",
+    "Lyon"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántos lados tiene un triángulo?",
+   "op": [
+    "3",
+    "4"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Con qué se elabora el chocolate?",
+   "op": [
+    "Cacao",
+    "Café"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Mozart era austriaco o alemán?",
+   "op": [
+    "Austriaco",
+    "Alemán"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿La paella es típica de Valencia o de Asturias?",
+   "op": [
+    "Valencia",
+    "Asturias"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué continente está el río Amazonas?",
+   "op": [
+    "América",
+    "África"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántas casillas tiene un tablero de ajedrez?",
+   "op": [
+    "64",
+    "81"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿De qué país es originario el oso panda?",
+   "op": [
+    "China",
+    "Japón"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántas cavidades tiene el corazón humano?",
+   "op": [
+    "4",
+    "2"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué día es Navidad?",
+   "op": [
+    "25 de diciembre",
+    "6 de enero"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿El kiwi es también un ave?",
+   "op": [
+    "Sí",
+    "No"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Por qué es famosa Venecia?",
+   "op": [
+    "Sus canales",
+    "Sus montañas"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué animal es el más alto del mundo?",
+   "op": [
+    "Jirafa",
+    "Elefante"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿En qué país está Machu Picchu?",
+   "op": [
+    "Perú",
+    "Bolivia"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántos colores tiene la bandera de España?",
+   "op": [
+    "2",
+    "3"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿De qué color es la clorofila?",
+   "op": [
+    "Verde",
+    "Roja"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuántos minutos tiene una hora?",
+   "op": [
+    "60",
+    "100"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué es más grande, un océano o un mar?",
+   "op": [
+    "Un océano",
+    "Un mar"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿El Sáhara es un desierto de África o de Asia?",
+   "op": [
+    "África",
+    "Asia"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Cuál es el planeta más grande del sistema solar?",
+   "op": [
+    "Júpiter",
+    "Saturno"
+   ],
+   "r": 0
+  },
+  {
+   "p": "¿Qué es el murciélago?",
+   "op": [
+    "Mamífero",
+    "Ave"
+   ],
+   "r": 0
+  }
+ ],
+ "bote": [
+  {
+   "p": "Capital de Francia",
+   "r": "París"
+  },
+  {
+   "p": "Animal conocido como el rey de la selva",
+   "r": "León"
+  },
+  {
+   "p": "Satélite natural de la Tierra",
+   "r": "Luna"
+  },
+  {
+   "p": "Mes del año que tiene 28 o 29 días",
+   "r": "Febrero"
+  },
+  {
+   "p": "Color que resulta de mezclar rojo y blanco",
+   "r": "Rosa"
+  },
+  {
+   "p": "Número de patas que tiene un insecto",
+   "r": "6|seis"
+  },
+  {
+   "p": "Apellido del autor de «Don Quijote de la Mancha»",
+   "r": "Cervantes|Miguel de Cervantes"
+  },
+  {
+   "p": "Planeta famoso por sus grandes anillos",
+   "r": "Saturno"
+  },
+  {
+   "p": "Capital de Italia",
+   "r": "Roma"
+  },
+  {
+   "p": "Deporte en el que se batea un «home run»",
+   "r": "Béisbol"
+  },
+  {
+   "p": "Metal precioso de color amarillo",
+   "r": "Oro"
+  },
+  {
+   "p": "Continente en el que está Egipto",
+   "r": "África"
+  },
+  {
+   "p": "Número de días de una semana",
+   "r": "7|siete"
+  },
+  {
+   "p": "Ave que es símbolo de la paz",
+   "r": "Paloma"
+  },
+  {
+   "p": "Instrumento con teclas blancas y negras",
+   "r": "Piano"
+  },
+  {
+   "p": "Producto dulce que elaboran las abejas",
+   "r": "Miel"
+  },
+  {
+   "p": "Capital de Japón",
+   "r": "Tokio|Tokyo"
+  },
+  {
+   "p": "Estación del año que empieza en diciembre en España",
+   "r": "Invierno"
+  },
+  {
+   "p": "Animal que tiene trompa",
+   "r": "Elefante"
+  },
+  {
+   "p": "Idioma oficial de Brasil",
+   "r": "Portugués"
+  },
+  {
+   "p": "Moneda oficial de España",
+   "r": "Euro|el euro"
+  },
+  {
+   "p": "Número de jugadores de un equipo de fútbol en el campo",
+   "r": "11|once"
+  },
+  {
+   "p": "Océano que separa Europa de América",
+   "r": "Atlántico"
+  },
+  {
+   "p": "Capital de Alemania",
+   "r": "Berlín"
+  },
+  {
+   "p": "Fruta amarilla y alargada que se pela",
+   "r": "Plátano|banana"
+  },
+  {
+   "p": "Piedra preciosa más dura",
+   "r": "Diamante"
+  },
+  {
+   "p": "País con forma de bota",
+   "r": "Italia"
+  },
+  {
+   "p": "Animal que nos da la lana",
+   "r": "Oveja"
+  },
+  {
+   "p": "Número de años de un siglo",
+   "r": "100|cien"
+  },
+  {
+   "p": "Instrumento óptico para observar las estrellas",
+   "r": "Telescopio"
+  },
+  {
+   "p": "Capital de Andalucía",
+   "r": "Sevilla"
+  },
+  {
+   "p": "Lo contrario de «noche»",
+   "r": "Día|el día"
+  },
+  {
+   "p": "Parte de la planta que crece bajo tierra",
+   "r": "Raíz"
+  },
+  {
+   "p": "Único mamífero capaz de volar",
+   "r": "Murciélago"
+  },
+  {
+   "p": "Primer mes del año",
+   "r": "Enero"
+  },
+  {
+   "p": "Bebida que se obtiene de la uva fermentada",
+   "r": "Vino"
+  },
+  {
+   "p": "País cuya capital es Lisboa",
+   "r": "Portugal"
+  },
+  {
+   "p": "Rey de los dioses griegos",
+   "r": "Zeus"
+  },
+  {
+   "p": "Agua en estado sólido",
+   "r": "Hielo"
+  },
+  {
+   "p": "Ciudad donde está la Puerta de Alcalá",
+   "r": "Madrid"
+  },
+  {
+   "p": "Animal con caparazón que camina muy despacio",
+   "r": "Tortuga"
+  },
+  {
+   "p": "Planeta en el que vivimos",
+   "r": "Tierra|la Tierra"
+  },
+  {
+   "p": "Número de colores del arcoíris",
+   "r": "7|siete"
+  },
+  {
+   "p": "Profesional que apaga incendios",
+   "r": "Bombero|bombera"
+  },
+  {
+   "p": "Número de horas que tiene un día",
+   "r": "24|veinticuatro"
+  },
+  {
+   "p": "Instrumento de seis cuerdas típico del flamenco",
+   "r": "Guitarra"
+  },
+  {
+   "p": "Capital de Rusia",
+   "r": "Moscú"
+  },
+  {
+   "p": "Estrella que nos da luz y calor",
+   "r": "Sol|el Sol"
+  },
+  {
+   "p": "Animal que hace «miau»",
+   "r": "Gato"
+  },
+  {
+   "p": "Fruto seco con forma de cerebro",
+   "r": "Nuez"
+  },
+  {
+   "p": "Persona que cura a los enfermos en un hospital",
+   "r": "Médico|médica|doctor|doctora"
+  },
+  {
+   "p": "Ciudad española con la Torre del Oro",
+   "r": "Sevilla"
+  },
+  {
+   "p": "Pájaro que repite palabras",
+   "r": "Loro"
+  },
+  {
+   "p": "Mar que baña Barcelona",
+   "r": "Mediterráneo"
+  },
+  {
+   "p": "Juego de mesa con reyes, damas y alfiles",
+   "r": "Ajedrez"
+  },
+  {
+   "p": "Lugar donde se guardan y prestan libros",
+   "r": "Biblioteca"
+  },
+  {
+   "p": "Estación del año en la que caen las hojas",
+   "r": "Otoño"
+  },
+  {
+   "p": "Prenda que se pone en la cabeza",
+   "r": "Gorro|sombrero|gorra"
+  },
+  {
+   "p": "Animal que es el mejor amigo del hombre",
+   "r": "Perro"
+  },
+  {
+   "p": "País de los canguros",
+   "r": "Australia"
+  }
+ ]
+}

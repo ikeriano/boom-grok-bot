@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover,interactive-widget=resizes-content">
+<meta name="theme-color" content="#02040c">
+<title>¡Boom! 3D · Estudios Grok Bot (fan-made)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app"></div>
+<div id="loading"><div class="ld-bomba">💣</div><div>Cargando plató…</div></div>
+
+<div id="menu" class="screen hidden">
+  <img class="logo" alt="¡Boom!">
+  <div class="btns">
+    <button data-mode="mini">Minijuego</button>
+    <button data-mode="entreno">Entrenamiento</button>
+    <button data-mode="programa">Programa completo</button>
+    <button data-mode="prime" class="gold">Especial Prime Time</button>
+    <button data-mode="historia">Historia del programa</button>
+  </div>
+  <div class="themes"><span>Temática:</span><div id="themeList"></div></div>
+  <div class="menuFoot">
+    <div class="dl"><a href="#" id="btnReglas">📋 Reglas</a> <a href="#" id="btnOpciones">⚙ Opciones</a> <a href="#" id="btnCreditos">ℹ Créditos</a></div>
+    <div id="boteMenu"></div>
+    <div class="disc">Remake no oficial hecho por un fan, sin ánimo de lucro. ¡Boom! es un formato de origen israelí adaptado en España por Gestmusic (Antena 3) y Mediacrest (Cuatro). Sin relación oficial con el programa.</div>
+  </div>
+</div>
+
+<div id="trainMenu" class="screen hidden">
+  <h2>Entrenamiento</h2>
+  <div class="btns">
+    <button data-test="caliente">Bomba caliente</button>
+    <button data-test="cables">Bombas con cables</button>
+    <button data-test="estrategica">Bomba estratégica</button>
+    <button data-test="clasificatoria">Bomba clasificatoria</button>
+    <button data-test="bote" class="gold">Bomba bote</button>
+  </div>
+  <label class="chk"><input type="checkbox" id="unlimited"> Tiempo ilimitado</label>
+  <button class="back" id="trainBack">Volver</button>
+</div>
+
+<div id="opciones" class="screen hidden">
+  <h2>Opciones</h2>
+  <div id="opcCuerpo"></div>
+  <p class="nota">Lo que subas se guarda solo en este navegador. También puedes poner archivos en las carpetas <b>audio/</b> y <b>logos/</b> (ver LEEME.txt).</p>
+  <button class="back" data-back>Volver</button>
+</div>
+
+<div id="creditos" class="screen hidden">
+  <h2>Créditos</h2>
+  <div class="cred">
+    <p><b>¡Boom! 3D · Estudios Grok Bot</b> · recreación no oficial para jugar en casa.</p>
+    <p>Plató 3D, logo estilo cómic, cabecera, grafismos y sonidos de respaldo: creación original procedural (Three.js).</p>
+    <p>Presentador «Rober Mecha», concursantes y famosos: personajes virtuales ficticios, sin parecido con personas reales.</p>
+    <p>Preguntas: originales de ejemplo, ampliables en <b>data/preguntas_extra.js</b>.</p>
+    <p>Datos del modo historia: historia del programa aportada por el usuario.</p>
+    <p>Estructura de menús inspirada en el APK «¡Ahora Caigo! 3D» del usuario.</p>
+    <p>Tipografía 3D: Helvetiker (licencia en src/fonts/LICENSE). Motor: three.js (MIT).</p>
+  </div>
+  <button class="back" data-back>Volver</button>
+</div>
+
+<div id="hud" class="hidden">
+  <div class="marc l0"><div class="n"></div><div class="d"></div><div class="j"></div><div class="v"></div></div>
+  <div class="centro"><div id="timer"></div><div id="roundTxt"></div></div>
+  <div class="marc l1"><div class="n"></div><div class="d"></div><div class="j"></div><div class="v"></div></div>
+</div>
+<div id="glights" class="hidden"></div>
+<div id="topBtns"><button id="btnLights" title="Luces">💡 Luces</button><button id="btnVoice" title="Voz del presentador">🗣</button><button id="btnMute" title="Sonido">🔊</button><button id="btnHome" title="Menú">⌂</button></div>
+<div id="hint" class="hidden"></div>
+<div id="qpanel" class="hidden"></div>
+<div id="overlay" class="hidden"></div>
+<div id="bubble" class="hidden"></div>
+<div id="joy" class="hidden"><div id="knob"></div></div>
+<div id="cabTexto"></div>
+<button id="skipVideo">Saltar ▶▶</button>
+<div id="fx-flash"></div><div id="fx-fade"></div>
+<div id="hist" class="hidden"><div id="histHead"><span id="histNum"></span> <b id="histTitle"></b></div><div id="histSub"></div><div id="histBtns"><button id="histPrev">◀ Anterior</button><button id="histNext">Siguiente ▶</button><button id="histSkip">Saltar ✕</button></div></div>
+<script src="data/preguntas_extra.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

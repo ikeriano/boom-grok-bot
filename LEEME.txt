@@ -1,0 +1,77 @@
+¡BOOM! 3D · ESTUDIOS GROK BOT
+=============================
+Recreación NO OFICIAL (hecha por un fan, sin ánimo de lucro) del concurso ¡Boom!, para jugar en el
+navegador. Sin relación oficial con el programa ni con sus cadenas o productoras.
+
+CÓMO ABRIRLO
+- Online: la dirección de GitHub Pages que te pasé.
+- En local: abre index.html con Chrome/Edge/Firefox (doble clic). Si el navegador bloquea algo al
+  abrirlo como archivo, sirve la carpeta (por ejemplo: «npx serve .») y entra en la dirección que te dé.
+
+ESTRUCTURA (la misma que tu APK de ¡Ahora caigo!)
+Menú principal:
+  · Minijuego ............. partida rápida: reglas → 4 bombas por equipo → clasificatoria → bote.
+  · Entrenamiento ......... practica una prueba suelta (Bomba caliente, Bombas con cables, Bomba
+                            estratégica, Bomba clasificatoria, Bomba bote) con «Tiempo ilimitado».
+  · Programa completo ..... eliges etapa (Antena 3 por fechas o Cuatro 2024) y equipo → cabecera →
+                            paseo por el plató hasta tu atril → programa entero → despedida →
+                            paseo libre (⌂ para volver).
+  · Especial Prime Time ... gala dorada con todos los premios al doble.
+  · Historia del programa . el presentador virtual cuenta la historia y los récords capítulo a
+                            capítulo (◀ Anterior / Siguiente ▶ / Saltar ✕), con la ficha de cada
+                            capítulo en la pantalla del plató.
+  · Temática .............. Clásico, Navidad, Nochebuena, Nochevieja, Halloween, Carnaval,
+                            San Valentín, Semana Santa, Verano, Niños, Famosos y Campeones. Cambia
+                            colores y decoración del plató y añade preguntas temáticas.
+  · Pie: Reglas, Opciones (color del plató, música, logo, brillo) y Créditos.
+Botones de arriba (siempre visibles): 💡 Luces · 🗣 voz del presentador · 🔊 sonido · ⌂ menú.
+
+FASES (según la historia que me mandaste)
+1. Bomba caliente (desde 18-oct-2021): la minibomba pasa de mano en mano; 3 s para completar una
+   frase con dos huecos (3 opciones cada uno). +1 acierto, −1 fallo. Explota en un momento al azar.
+   El ganador elige ventaja: Cable blanco, Siguen todos, Elige tema o Uno menos.
+2. Bombas con cables: 4 por equipo (200/400/600/800 € en Antena 3; 100/200/300/500 € en Cuatro).
+   Las 2 primeras: 4 cables y 45 s; las 2 últimas: 5 cables y 60 s. Hay que cortar las respuestas
+   ERRÓNEAS. Desde enero de 2022 la última es la bomba de cristal.
+3. Bomba estratégica (desde marzo de 2018): 6 temas, 10 respuestas con 7 correctas, 60 s, rebote
+   de 30 s para el rival y comodín de consulta de 10 s. Ventajas: rescatar a un eliminado, +10 s
+   propios o −10 s al rival en la clasificatoria.
+4. Bomba clasificatoria: bomba plateada con mecha LED, 2 minutos por equipo, preguntas de 2
+   opciones (±200 €, ±100 € en Cuatro). Si hay empate de dinero antes, se desempata con un panel
+   de 10 respuestas (6 correctas).
+5. Bomba bote: 15 minibombas en 2 minutos. «¡Boom!» para pasar. En la segunda vuelta, el primer
+   fallo hace explotar la bomba. El bote empieza en 50.000 € y sube 5.000 € por programa sin
+   ganarlo (se guarda en tu navegador).
+
+SIMPLIFICACIONES (cosas que la historia no detalla y he decidido yo)
+- La duración de la mecha oculta de la Bomba caliente (entre 22 y 38 s) y que, en empate a
+  puntos, gane el equipo que NO tenía la bomba al explotar.
+- «Uno menos»: el rival juega la fase de bombas con cables con un jugador menos (luego vuelve).
+- Si una bomba explota, cae el jugador que estaba cortando. «Siguen todos» evita una eliminación.
+- El equipo que pierde la clasificatoria se va sin premio; el ganador juega el bote y se lleva su
+  dinero aunque no lo consiga.
+- En el Prime Time los premios se multiplican por 2 (en el programa real los premios especiales
+  variaron).
+- La etapa de Cuatro usa la misma estructura de fases que la última de Antena 3.
+
+TU MÚSICA, TUS LOGOS Y TUS AUDIOS (nada de esto viene incluido)
+- Desde Opciones puedes subir la música de cabecera y el logo de cada etapa (se guarda solo en ese
+  navegador), o poner archivos en las carpetas:
+    audio/cabecera_antena3.mp3   audio/cabecera_cuatro.mp3   (o audio/cabecera.mp3 para ambas)
+    logos/logo_antena3.png       logos/logo_cuatro.png       (o logos/logo.png)
+- Músicas de fondo opcionales: audio/musica_menu.mp3, audio/musica_tension.mp3,
+  audio/musica_trilha.mp3. Efectos opcionales: audio/acierto.mp3, fallo, explosion, corte, tictac,
+  aplausos, risas, badumtss, banner, bote, pop, tecla.
+- Voces grabadas opcionales del presentador: audio/voz/hist_intro.mp3, hist_1.mp3 … hist_13.mp3,
+  hist_fin.mp3, bienvenida.mp3, walk.mp3… Si no existen, habla la voz del navegador (es-ES).
+- Formatos: mp3, ogg, wav, m4a / png, jpg, webp, svg.
+- No se incluye ningún audio ni imagen del programa real ni del APK de ¡Ahora caigo!.
+
+MÁS PREGUNTAS
+Edita data/preguntas_extra.js (vienen ejemplos dentro). No hace falta recompilar.
+
+PARA PROGRAMADORES
+npm install  ·  npm run build  (genera js/app.js con esbuild)
+src/main.js (menú, cámara, paseo, historia, opciones) · src/juego/ (core, fases, programa, historia)
+src/plato/ (plató 3D, logo, cabecera) · src/temas.js (temáticas) · src/data/preguntas.json
+Pruebas: node tools/flujo.mjs programa clasico capturas/prueba  (requiere Chrome)
