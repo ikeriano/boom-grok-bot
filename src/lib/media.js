@@ -47,8 +47,44 @@ async function firstFound(base, exts, probe) {
   return null;
 }
 const folderCache = {};
-export function findAudioFile(name) {
-  return folderCache['a:' + name] ??= firstFound(`audio/${name}`, AUDIO_EXT, probeAudio);
+// Prioridad: carpeta audio/ local > músicas cargadas por el usuario (IndexedDB) > nada (el juego sintetiza)
+export async function findAudioFile(name) {
+  const local = await (folderCache['a:' + name] ??= firstFound(`audio/${name}`, AUDIO_EXT, probeAudio));
+  if (local) return local;
+  await cargadasListas; return cargadas[name] || null;
+}
+
+// --- «Cargar músicas»: zip o varios archivos de audio guardados en IndexedDB con su nombre ---
+// claves: 'mus:index' = [nombres] y 'mus:<nombre>' = {blob, name}. <nombre> = archivo sin carpeta ni extensión.
+const cargadas = {};
+const nombreBase = f => f.split('/').pop().replace(/\.[^.]+$/, '');
+async function leerCargadas() {
+  Object.keys(cargadas).forEach(k => { URL.revokeObjectURL(cargadas[k]); delete cargadas[k]; });
+  const idx = (await idb.get('mus:index')) || [];
+  for (const n of idx) { const r = await idb.get('mus:' + n); if (r && r.blob) cargadas[n] = URL.createObjectURL(r.blob); }
+}
+let cargadasListas = leerCargadas().catch(() => {});
+export const urlCargada = n => cargadas[n];
+export const musicasCargadas = async () => { await cargadasListas; return Object.keys(cargadas).sort(); };
+const MIME = { mp3: 'audio/mpeg', ogg: 'audio/ogg', wav: 'audio/wav', m4a: 'audio/mp4' };
+/** files: File[] (.zip y/o audios). Devuelve el número de músicas guardadas. */
+export async function cargarMusicas(files) {
+  const { unzipSync } = await import('fflate');
+  const nuevas = [];
+  for (const f of files) {
+    if (/\.zip$/i.test(f.name)) {
+      const z = unzipSync(new Uint8Array(await f.arrayBuffer()), { filter: e => /\.(mp3|ogg|wav|m4a)$/i.test(e.name) && !/(^|\/)(__MACOSX|\.)/.test(e.name) });
+      for (const [ruta, datos] of Object.entries(z)) { const ext = ruta.split('.').pop().toLowerCase(); nuevas.push([nombreBase(ruta), new Blob([datos], { type: MIME[ext] }), ruta.split('/').pop()]); }
+    } else if (/\.(mp3|ogg|wav|m4a)$/i.test(f.name) || /^audio\//.test(f.type)) nuevas.push([nombreBase(f.name), f, f.name]);
+  }
+  const idx = new Set((await idb.get('mus:index')) || []);
+  for (const [n, blob, name] of nuevas) { await idb.put('mus:' + n, { blob, name }); idx.add(n); }
+  await idb.put('mus:index', [...idx]);
+  cargadasListas = leerCargadas(); await cargadasListas; return nuevas.length;
+}
+export async function borrarMusicas() {
+  const idx = (await idb.get('mus:index')) || []; for (const n of idx) await idb.del('mus:' + n); await idb.del('mus:index');
+  cargadasListas = leerCargadas(); await cargadasListas;
 }
 export function findLogoFile(name) {
   return folderCache['i:' + name] ??= firstFound(`logos/${name}`, IMG_EXT, probeImage);

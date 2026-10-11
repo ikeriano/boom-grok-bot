@@ -127,3 +127,7 @@ body.captura #topBtns{display:none}
 .mb-bomba .esf{width:clamp(140px,34vh,300px);height:clamp(140px,34vh,300px);border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 28%,#888,#1a1a1a 55%,#000);border:4px solid #333;box-shadow:0 0 60px #2a6bffaa;font:900 clamp(60px,16vh,140px) "Arial Black",Arial;color:#fff;animation:pop .5s ease-out}
 .mb-bomba.mega .esf{background:radial-gradient(circle at 35% 28%,#fff,#a8b0c0 40%,#3a3a50 80%);color:#1a0a40;font-size:clamp(28px,7vh,60px);box-shadow:0 0 80px #c060ff}
 @media (max-height:480px){#mbhud{gap:8px;padding:3px 8px}.mb-q{font-size:14px}.mbc{padding:2px 8px;font-size:12px}}
+/* v1.4 · Cargar músicas */
+#optMusicas{border:3px solid #ffd34d;box-shadow:0 0 18px #ffd34d66}#optMusicas .cargar-mus{font-size:clamp(16px,3vh,22px)!important;padding:1.6vh 1vw!important;font-weight:900;animation:latido 1.6s ease-in-out infinite}
+@keyframes latido{50%{box-shadow:0 0 22px #ffd34d;transform:scale(1.02)}}
+.mbtn.aviso-mus{background:linear-gradient(#ff9a2a,#c04a00)!important;border-color:#ffe0a0!important;animation:latido 1.6s ease-in-out infinite}

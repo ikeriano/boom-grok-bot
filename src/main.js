@@ -12,7 +12,11 @@ import { drawBoomLogo } from './plato/logo.js';
 import * as CAB from './plato/cabecera.js';
 import { THEMES, paletaDe } from './temas.js';
 import { me } from './lib/audio.js';
-import { audioCtx, recursoEpoca, guardarSubido, quitarSubido, idb as idbMedia } from './lib/media.js';
+import { audioCtx, recursoEpoca, guardarSubido, quitarSubido, idb as idbMedia, cargarMusicas, borrarMusicas, musicasCargadas, findAudioFile, urlCargada } from './lib/media.js';
+window.__urlMusica = urlCargada;
+// músicas que el juego reconoce (las del proyecto Scratch de ¡Boom!, ver boom_musicas.zip)
+const MUSICAS = ['musica_menu', 'musica_tension', 'musica_trilha', 'musica_mb_suspense', 'musica_mb_tempo1', 'musica_mb_tempo2', 'musica_mb_tempo3', 'musica_mb_dinamica', 'mb_cortado', 'mb_explota', 'mb_desactivada', 'mb_ganaste', 'mb_vinheta'];
+async function estadoMusicas() { const c = await musicasCargadas(); let local = 0; for (const n of MUSICAS) if (!c.includes(n) && await findAudioFile(n)) local++; return { cargadas: c, reconocidas: MUSICAS.filter(n => c.includes(n)).length, local }; }
 import { $, esc, nuevoToken, check, Dt, Zi, ABORT, bubble, di, habla, hud, panel, cerrarOverlay, elegir, hashtag, limpiarRotulos, toast, acciones, ocultarCreditos, rodarCreditos } from './juego/core.js';
 import { jugarPrograma, entrenamiento, ETAPAS, reglas, leerBote, creditosBoom, PRUEBAS_ENTRENO } from './juego/programa.js';
 import { CAPITULOS, PRESENTADOR } from './juego/historia.js';
@@ -168,7 +172,7 @@ const guardar = () => { guardarCfg(); me.aplicarNiveles(); };
 const siNo = (k, f) => M.siNo(cfg, k, v => { guardar(); f && f(v); });
 const opciones = (k, l, f) => M.opciones(cfg, k, l, v => { guardar(); f && f(v); });
 const slider = k => M.slider(cfg, k, guardar, () => me.play(k === 'publicoVol' ? 'aplausos' : 'tecla'));
-let lineaMsg = '', probando = null;
+let lineaMsg = '', msgMus = '', probando = null;
 
 function irMenu(p = 'main') {
   nuevoToken(); limpiezasModo.splice(0).forEach(f => { try { f(); } catch (e) { /* */ } }); me.stopAll(); pararCabecera(); cerrarOverlay(); panel.hide(); hud.show(false); pistaTxt(''); $('#bubble').classList.add('hidden');
@@ -188,6 +192,7 @@ function Lt(p) {
   if (p === 'main') {
     col.append(mbtn('Jugar', 'Programa completo, entrenamiento, clásico…', 'gold', () => Lt('play')), mbtn('Opciones', 'Sonido, calidad gráfica, pantalla completa', '', () => Lt('options')),
       mbtn('La historia de ¡Boom!', `${esc(cfg.presentador)} te cuenta la historia del programa`, '', () => iniciar('historia')), mbtn('Cómo se juega', 'Las reglas del concurso', '', () => Lt('help')), mbtn('Créditos', '', '', () => Lt('credits')));
+    estadoMusicas().then(e => { if (pantalla !== 'main' || e.reconocidas || e.local) return; const a = mbtn('🎵 Sin músicas cargadas', 'Toca aquí para cargar las músicas del juego (Opciones → Cargar músicas)', 'aviso-mus', () => Lt('options')); a.id = 'avisoMusicas'; col.insertBefore(a, col.children[1] || null); });
     if (!matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches) col.append(mbtn('Instalar app', 'Juega sin conexión desde tu pantalla de inicio', 'inst', instalar));
   } else if (p === 'play') {
     col.append(mbtn('Programa completo', 'Cabecera, bombas, clasificatoria, bomba bote y despedida', 'gold', () => iniciar('programa')), mbtn('Entrenamiento', 'Practica cada bomba por separado', '', () => Lt('train')),
@@ -205,6 +210,15 @@ function Lt(p) {
     r.append(b, volver('play')); col.append(r);
   } else if (p === 'options') {
     col.append(M.h2('Opciones'));
+    { const bm = M.bloque('🎵 Músicas del juego'); bm.id = 'optMusicas'; bm.classList.add('musicas'); col.append(bm);
+      estadoMusicas().then(e => {
+        bm.append(M.linea(e.cargadas.length ? `✅ <b>${e.cargadas.length}</b> ${e.cargadas.length === 1 ? 'música cargada' : 'músicas cargadas'} (${e.reconocidas} de ${MUSICAS.length} del juego)` : e.local ? `🎵 ${e.local} músicas en la carpeta audio/` : '⚠️ No hay músicas cargadas: suena la música sintetizada', 'oname mus-estado'));
+        const bs = M.botones([{ t: '📂 CARGAR MÚSICAS (.zip o mp3/ogg)', sel: true, full: true, file: { accept: '.zip,application/zip,audio/*', multiple: true, onFile: async fs => { bm.querySelector('.mus-estado').textContent = '⏳ Cargando ' + fs.map(f => f.name).join(', ') + '…'; try { const n = await cargarMusicas(fs); msgMus = n ? `✅ ¡${n} ${n === 1 ? 'música guardada' : 'músicas guardadas'} en este dispositivo!` : '⚠️ No había archivos de audio'; } catch (x) { msgMus = '⚠️ No se pudo leer: ' + x.message; } musicaMenu = false; me.stopMusic(); Lt('options'); me.music('menu'); musicaMenu = true; } } },
+          { t: '🗑 Borrar músicas cargadas', disabled: !e.cargadas.length, fn: async () => { await borrarMusicas(); msgMus = 'Músicas borradas: vuelve la música sintetizada'; me.stopMusic(); musicaMenu = false; Lt('options'); me.music('menu'); musicaMenu = true; } }]);
+        bs.querySelector('label').classList.add('cargar-mus'); bm.append(bs);
+        if (msgMus) { bm.append(M.linea(msgMus, 'omsg')); msgMus = ''; }
+        bm.append(M.nota('Elige el archivo boom_musicas.zip (o varios mp3/ogg con los nombres del juego). Se guardan solo en este dispositivo. Si hay músicas en la carpeta audio/, se usan esas primero.'));
+      }); }
     col.append(M.fila('🎵 Música', siNo('music'), slider('musicVol')));
     col.append(M.fila('🎬 Cabecera', ...opciones('cabecera', [['video', 'Mi vídeo'], ['3d', 'Plató 3D']])));
     const cab = M.bloque('🎶 Música de la cabecera'); cab.id = 'optCab'; col.append(cab); pintarMusicaCab(cab);

@@ -123,3 +123,11 @@ NOVEDADES v1.3 — DESAFÍO MEGA BOMBA (basado en el proyecto Scratch original d
   Si no están, suena la música sintetizada del juego.
 - Con doble clic en index.html (file://) ahora también suenan las voces pregeneradas (voz/index.js).
 - Pruebas: node tools/test_megabomba.mjs mega|parar|fin  (con un servidor en el puerto 8766).
+
+NOVEDADES v1.4 — CARGAR MÚSICAS
+- Opciones → «📂 CARGAR MÚSICAS»: elige boom_musicas.zip (o varios mp3/ogg con los nombres del juego).
+  Se descomprime en el propio navegador (fflate, incluida en js/app.js) y cada música se guarda en
+  IndexedDB con su nombre. Muestra cuántas hay cargadas y tiene «Borrar músicas cargadas».
+- Prioridad: carpeta audio/ local > músicas cargadas (IndexedDB) > música sintetizada.
+- Si no hay músicas, el menú principal muestra el aviso «🎵 Sin músicas cargadas».
+- Prueba: node tools/test_musicas.mjs /ruta/boom_musicas.zip
