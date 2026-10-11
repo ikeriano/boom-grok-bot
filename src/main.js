@@ -19,6 +19,8 @@ import { CAPITULOS, PRESENTADOR } from './juego/historia.js';
 import { CHISTES } from './juego/programa.js';
 import BASE_PREG from './data/preguntas.json';
 import * as FASES from './juego/fases.js';
+import { desafioMegaBomba, MB_FRASES } from './juego/megabomba.js';
+window.__mbFrases = () => Object.values(MB_FRASES);
 
 const params = new URLSearchParams(location.search);
 import { cfg, guardarCfg, VERSION } from './cfg.js';
@@ -141,6 +143,15 @@ const api = {
   marcador(html) { const m = $('#marcador'); if (!html) { m.classList.add('hidden'); return; } m.innerHTML = html; m.classList.remove('hidden'); },
   monologo: (id, enPrograma = false) => monologo(id, enPrograma),
   iniciar: m => iniciar(m), menu: (p = 'main') => irMenu(p),
+  limpieza: f => limpiezasModo.push(f),
+  /** colores del plató según lo que pasa (como el decorado del Scratch): acierto (verde), explota (rojo), mega (morado) o null = el normal */
+  platoColor(k) { const C = MB_COLORES[k]; if (!C) return aplicarTema(temaId, false); P.setTema({ ...ctx.paleta, ...C }); },
+};
+let limpiezasModo = [];
+const MB_COLORES = {
+  acierto: { rombo: ['#0a7a2a', '#30d060', '#d0ffd8'], gap: '#021006', borde: 0x40ff80, aro: 0x40ff80, marco: 0x30d060, luces: [0x30ff60, 0xffffff], fondo: 0x020a04 },
+  explota: { rombo: ['#a00a0a', '#ff3a2a', '#ffd0c0'], gap: '#160202', borde: 0xff3020, aro: 0xff4020, marco: 0xff2010, luces: [0xff2010, 0xff9020], fondo: 0x0e0202 },
+  mega: { rombo: ['#4a10a0', '#9a50ff', '#ead8ff'], gap: '#080216', borde: 0xc060ff, aro: 0xffd040, marco: 0xa040ff, luces: [0xa040ff, 0xffd040], fondo: 0x050210 },
 };
 
 // ---------- MENÚ (plantilla /workspace/plantilla_menu: misma interfaz que el APK; el plató es el de ¡Boom!) ----------
@@ -160,7 +171,7 @@ const slider = k => M.slider(cfg, k, guardar, () => me.play(k === 'publicoVol' ?
 let lineaMsg = '', probando = null;
 
 function irMenu(p = 'main') {
-  nuevoToken(); me.stopAll(); pararCabecera(); cerrarOverlay(); panel.hide(); hud.show(false); pistaTxt(''); $('#bubble').classList.add('hidden');
+  nuevoToken(); limpiezasModo.splice(0).forEach(f => { try { f(); } catch (e) { /* */ } }); me.stopAll(); pararCabecera(); cerrarOverlay(); panel.hide(); hud.show(false); pistaTxt(''); $('#bubble').classList.add('hidden');
   hist?.cerrar(); hist = null; ctx.pantallaInfo = null; alLlegar = null; P.walker.visible = false; P.marca.visible = false; $('#joy').classList.add('hidden'); primeraPersona = false; camFija = null;
   limpiarRotulos(); acciones([]); ocultarCreditos(); hashtag(''); api.marcador(null); $('#video').classList.add('hidden'); $('#topbar').classList.add('hidden'); $('#glights').classList.add('hidden');
   P.revivirTodos(); ['rojo', 'azul'].forEach(eq => [0, 1, 2, 3].forEach(i => P.ocultarAtril(eq, i, false))); P.setMinis(Array(15).fill('off')); P.setMecha(1); P.activarBomba(-1);
@@ -180,6 +191,7 @@ function Lt(p) {
     if (!matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches) col.append(mbtn('Instalar app', 'Juega sin conexión desde tu pantalla de inicio', 'inst', instalar));
   } else if (p === 'play') {
     col.append(mbtn('Programa completo', 'Cabecera, bombas, clasificatoria, bomba bote y despedida', 'gold', () => iniciar('programa')), mbtn('Entrenamiento', 'Practica cada bomba por separado', '', () => Lt('train')),
+      mbtn('Desafío Mega Bomba', '7 bombas, 3 vidas, 10 s por cable… ¿te atreves con la Mega Bomba?', 'gold', () => iniciar('megabomba')),
       mbtn('Clásico', 'La partida rápida de siempre: cables, clasificatoria y bote', '', () => iniciar('mini')), mbtn('Explorar el plató', 'Pasea libremente por el plató 3D', '', () => iniciar('explorar')),
       mbtn('Monólogos del presentador', 'Sus números de humor: con el público, al teléfono y las normas', '', () => Lt('monologos')), M.h2('Programa especial'),
       M.rejillaTemas(THEMES, temaId, k => { aplicarTema(k); Lt('play'); }), volver('main'));
@@ -231,7 +243,7 @@ function Lt(p) {
     col.append(volver('main'), M.h2('Cómo se juega')); const d = document.createElement('div'); d.className = 'mtext'; d.innerHTML = AYUDA; col.append(d);
   } else if (p === 'credits') {
     col.append(volver('main'), M.h2('Créditos')); const d = document.createElement('div'); d.className = 'mtext creditos';
-    d.innerHTML = M.htmlCreditos(creditosBoom(null)) + `<p><b>Especial 300 suscriptores</b><br>Dedicado a los suscriptores del canal de YouTube «Ikeriano el campeón 2»</p><p class="small">Versión ${VERSION}</p><p class="small">Juego de fans sin ánimo de lucro. «¡Boom!» es un formato de televisión de sus respectivos dueños; este juego no está afiliado a ninguna cadena. El presentador es un personaje virtual inventado. Interfaz basada en el APK «¡Ahora Caigo! El juego 3D» de Iker.</p>`;
+    d.innerHTML = M.htmlCreditos(creditosBoom(null)) + `<p><b>Especial 300 suscriptores</b><br>Dedicado a los suscriptores del canal de YouTube «Ikeriano el campeón 2»</p><p class="small">Versión ${VERSION}</p><p class="small">Juego de fans sin ánimo de lucro. «¡Boom!» es un formato de televisión de sus respectivos dueños; este juego no está afiliado a ninguna cadena. El presentador es un personaje virtual inventado. Interfaz basada en el APK «¡Ahora Caigo! El juego 3D» de Iker.</p><p><b>Desafío Mega Bomba</b><br>Basado en el proyecto original de Scratch «¡Boom!» (juego de fans en portugués) que nos pasó Iker: sus reglas, sus preguntas (traducidas y adaptadas al español) y sus efectos de sonido. Gracias a su autor.</p>`;
     col.append(d);
   }
 }
@@ -256,6 +268,7 @@ const AYUDA = `<p><b>Objetivo:</b> dos equipos de cuatro, el <b>rojo</b> y el <b
 <p><b>3. Bomba estratégica.</b> 10 respuestas, 7 correctas, 60 s. Si falláis, el rival tiene un rebote de 30 s. Comodín de consulta de 10 s.</p>
 <p><b>4. Bomba clasificatoria.</b> Bomba plateada con mecha: 2 minutos por equipo, preguntas de 2 opciones (±200 €, ±100 € en Cuatro). Si fallas, el turno pasa al rival.</p>
 <p><b>5. Bomba bote.</b> 15 minibombas en 2 minutos. Di «¡Boom!» para pasar. En la segunda vuelta, el primer fallo hace explotar la bomba.</p>
+<p><b>Desafío Mega Bomba</b> (Jugar → Desafío Mega Bomba, para un jugador, basado en el proyecto Scratch original de ¡Boom!): 7 bombas con 4, 4, 4, 5, 6, 7 y 8 cables. Aquí se cortan los cables de las respuestas <b>CORRECTAS</b>: el de la falsa hace ¡BOOM! Tienes 10 s por cable y, tras cada corte, la cuenta 3-2-1. Cada bomba desactivada suma 5.000, 10.000, 15.000, 20.000, 25.000 y 50.000 €. Tienes 3 vidas (si explotan 3 bombas, fin del juego). Tras la 6.ª bomba: <b>Parar</b> o <b>Mega Bomba</b> (8 cables): si la desactivas, ×4; si explota, te quedas la mitad.</p>
 <p><b>Controles 3D:</b> joystick a la izquierda para andar, arrastra para mirar (PC: WASD + ratón). 👁 cambia la cámara (primera/tercera persona al pasear). ☰ vuelve al menú. «Saltar ⏭» pasa la cabecera, la despedida y los monólogos.</p>`;
 function instalar() {
   const m = M.modal($('#menu'), `<h2>Instalar ¡Boom!</h2>${deferredPrompt ? '<p><button class="mbtn gold" id="instNow">📲 Instalar ahora</button></p>' : ''}<p><b>Android (Chrome):</b> menú ⋮ → «Instalar aplicación» o «Añadir a pantalla de inicio».</p><p><b>iPhone/iPad (Safari):</b> botón Compartir → «Añadir a pantalla de inicio».</p><p><b>PC (Chrome/Edge):</b> icono de instalar ⊕ en la barra de direcciones.</p><p>Una vez instalada funciona <b>sin conexión</b>.</p>`);
@@ -265,11 +278,13 @@ let deferredPrompt = null; addEventListener('beforeinstallprompt', e => { e.prev
 
 // ---------- iniciar modos (como ii() del APK) ----------
 async function iniciar(modo) {
+  limpiezasModo.splice(0).forEach(f => { try { f(); } catch (e) { /* */ } });
   const t = nuevoToken(); pantalla = 'juego'; me.stopAll(); musicaMenu = false; cerrarOverlay(); $('#menu').classList.add('hidden'); $('#topbar').classList.remove('hidden'); acciones([]); api.marcador(null);
   try {
     if (modo === 'historia') { await historia(t); return irMenu('main'); }
     if (modo === 'explorar') return await explorar(t);
     if (modo.startsWith('mono:')) return await monologo(modo.slice(5));
+    if (modo === 'megabomba') return await desafioMegaBomba(api);
     if (modo.startsWith('entreno:')) return await entrenamiento(modo.slice(8), api, { ilimitado: sinTiempo });
     await jugarPrograma(modo, api);
   } catch (e) { if (e !== ABORT) { console.error(e); toast('Error: ' + e.message, 5000); irMenu('play'); } }

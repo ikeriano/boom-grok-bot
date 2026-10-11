@@ -1,2 +1,5 @@
 node_modules/
 capturas/
+# músicas del proyecto Scratch: solo en la versión completa local (no se publican)
+audio/musica_*
+audio/mb_*

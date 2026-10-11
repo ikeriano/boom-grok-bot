@@ -1,0 +1,1296 @@
+{
+"c4": [
+{
+"p": "3 de estos términos están relacionados con las abejas",
+"op": [
+"Colmena",
+"Iglú",
+"Polen",
+"Aguijón"
+],
+"mal": 1
+},
+{
+"p": "3 de estos animales duermen muchas horas al día",
+"op": [
+"Armadillo",
+"Koala",
+"Erizo",
+"Jirafa"
+],
+"mal": 3
+},
+{
+"p": "3 de estos personajes son pelirrojos",
+"op": [
+"Jessica Rabbit",
+"Mérida",
+"Pocahontas",
+"Ariel"
+],
+"mal": 2
+},
+{
+"p": "3 de estos son estilos de natación",
+"op": [
+"Mariposa",
+"Espalda",
+"Surf",
+"Braza"
+],
+"mal": 2
+},
+{
+"p": "3 de estos personajes son amigos de Mafalda",
+"op": [
+"Felipe",
+"Guille",
+"Miguelito",
+"Manolito"
+],
+"mal": 1
+},
+{
+"p": "3 de estas son glándulas del cuerpo humano",
+"op": [
+"Tiroides",
+"Páncreas",
+"Hipófisis",
+"Hipocondrio"
+],
+"mal": 3
+},
+{
+"p": "3 de estas son especias de cocina",
+"op": [
+"Canela",
+"Estramonio",
+"Clavo",
+"Azafrán"
+],
+"mal": 1
+},
+{
+"p": "3 de estos son metales de las medallas olímpicas",
+"op": [
+"Bronce",
+"Hierro",
+"Oro",
+"Plata"
+],
+"mal": 1
+},
+{
+"p": "Dory, de «Buscando a Nemo», tiene 3 de estas características",
+"op": [
+"Es una medusa",
+"Es azul",
+"Es un pez",
+"Pierde la memoria"
+],
+"mal": 0
+},
+{
+"p": "3 de estas películas se rodaron en México",
+"op": [
+"Titanic",
+"La máscara del Zorro",
+"El fuego de la venganza",
+"El código Da Vinci"
+],
+"mal": 3
+},
+{
+"p": "3 de estos son tipos de tela",
+"op": [
+"Crepé",
+"Gabardina",
+"Vértice",
+"Pana"
+],
+"mal": 2
+},
+{
+"p": "Estos 3 colores aparecen en la bandera de Alemania",
+"op": [
+"Negro",
+"Rojo",
+"Azul",
+"Amarillo"
+],
+"mal": 2
+},
+{
+"p": "Estos 3 elementos forman el triángulo del fuego",
+"op": [
+"Calor",
+"Agua",
+"Combustible",
+"Oxígeno"
+],
+"mal": 1
+},
+{
+"p": "3 de estos deportes se juegan en equipo",
+"op": [
+"Boxeo",
+"Baloncesto",
+"Fútbol",
+"Waterpolo"
+],
+"mal": 0
+},
+{
+"p": "Según la superstición, 3 de estas cosas dan mala suerte",
+"op": [
+"Romper un espejo",
+"Brindar con agua",
+"Ver un gato negro",
+"Encontrar un trébol de 4 hojas"
+],
+"mal": 3
+},
+{
+"p": "3 de estos son amarillos",
+"op": [
+"Cáscara de plátano",
+"Pétalo de girasol",
+"Cuerpo de un Minion",
+"Plumas de un cuervo"
+],
+"mal": 3
+},
+{
+"p": "3 de estos son juegos típicos de casino",
+"op": [
+"Blackjack",
+"Jenga",
+"Póquer",
+"Ruleta"
+],
+"mal": 1
+},
+{
+"p": "3 de estos son movimientos de la Tierra",
+"op": [
+"Rotación",
+"Nutación",
+"Parálisis",
+"Traslación"
+],
+"mal": 2
+},
+{
+"p": "3 de estos son tipos de cicatriz",
+"op": [
+"Queloide",
+"Hipertrófica",
+"Disfónica",
+"Atrófica"
+],
+"mal": 2
+},
+{
+"p": "En 3 de estos deportes se usa raqueta",
+"op": [
+"Tenis",
+"Squash",
+"Bádminton",
+"Pinball"
+],
+"mal": 3
+},
+{
+"p": "3 de estas actrices se casaron al menos 3 veces",
+"op": [
+"Zsa Zsa Gabor",
+"Julia Roberts",
+"Demi Moore",
+"Liza Minnelli"
+],
+"mal": 1
+},
+{
+"p": "3 de estos huesos están en el oído",
+"op": [
+"Yunque",
+"Martillo",
+"Estribo",
+"Sacro"
+],
+"mal": 3
+},
+{
+"p": "En 3 de estas películas hay extraterrestres",
+"op": [
+"E.T.",
+"Depredador",
+"Anaconda",
+"Men in Black"
+],
+"mal": 2
+},
+{
+"p": "3 de estos cócteles llevan ron",
+"op": [
+"Cuba libre",
+"Piña colada",
+"Zombie",
+"Cosmopolitan"
+],
+"mal": 3
+},
+{
+"p": "3 materiales de las casas de «Los tres cerditos»",
+"op": [
+"Paja",
+"Papel",
+"Madera",
+"Ladrillo"
+],
+"mal": 1
+},
+{
+"p": "De estas letras, 3 son vocales abiertas",
+"op": [
+"A",
+"E",
+"O",
+"U"
+],
+"mal": 3
+},
+{
+"p": "3 de estos son sabores básicos",
+"op": [
+"Salado",
+"Amargo",
+"Dulce",
+"Picante"
+],
+"mal": 3
+},
+{
+"p": "En 3 de estos países el inglés es lengua oficial",
+"op": [
+"Nueva Zelanda",
+"Australia",
+"Inglaterra",
+"Portugal"
+],
+"mal": 3
+},
+{
+"p": "3 de estos productos son fermentados",
+"op": [
+"Yogur",
+"Aceite de oliva",
+"Cerveza",
+"Vino"
+],
+"mal": 1
+},
+{
+"p": "Con hilo de estos 3 materiales se suele bordar",
+"op": [
+"Lana",
+"Algodón",
+"Seda",
+"Fluorocarbono"
+],
+"mal": 3
+},
+{
+"p": "3 de estas verduras son de hoja",
+"op": [
+"Espárrago",
+"Acelga",
+"Lechuga",
+"Espinaca"
+],
+"mal": 0
+},
+{
+"p": "3 de estos son trastornos del sueño",
+"op": [
+"Apnea",
+"Funambulismo",
+"Insomnio",
+"Narcolepsia"
+],
+"mal": 1
+},
+{
+"p": "Las 3 naves de Colón en 1492",
+"op": [
+"Santa María",
+"La Española",
+"La Pinta",
+"La Niña"
+],
+"mal": 1
+},
+{
+"p": "3 instrumentos que usa el médico en la consulta",
+"op": [
+"Tensiómetro",
+"Bisturí",
+"Fonendoscopio",
+"Otoscopio"
+],
+"mal": 1
+},
+{
+"p": "Estos 3 personajes son del mundo de Super Mario",
+"op": [
+"Luigi",
+"Toad",
+"Princesa Peach",
+"Zelda"
+],
+"mal": 3
+},
+{
+"p": "3 de estos objetos se encuentran en una panadería",
+"op": [
+"Horno",
+"Alicates",
+"Báscula",
+"Bandeja"
+],
+"mal": 1
+},
+{
+"p": "Las 3 disciplinas del triatlón",
+"op": [
+"Carrera",
+"Tiro con arco",
+"Ciclismo",
+"Natación"
+],
+"mal": 1
+},
+{
+"p": "3 de estos son tipos de globo",
+"op": [
+"Terráqueo",
+"Ocular",
+"Volcánico",
+"Aerostático"
+],
+"mal": 2
+},
+{
+"p": "3 de estas son secciones de Facebook",
+"op": [
+"Biografía",
+"Etiqueta",
+"Abrazo",
+"Muro"
+],
+"mal": 2
+},
+{
+"p": "3 de estos son pecados capitales",
+"op": [
+"Envidia",
+"Avaricia",
+"Valentía",
+"Ira"
+],
+"mal": 2
+},
+{
+"p": "Un bombero usa estas 3 herramientas en un incendio",
+"op": [
+"Manguera",
+"Escalera",
+"Hacha",
+"Batidora"
+],
+"mal": 3
+},
+{
+"p": "3 de estos son Caballeros del Zodiaco",
+"op": [
+"Pegaso",
+"Andrómeda",
+"Centauro",
+"Fénix"
+],
+"mal": 2
+},
+{
+"p": "3 de estos alimentos son originarios de América",
+"op": [
+"Arroz",
+"Cacahuete",
+"Aguacate",
+"Amaranto"
+],
+"mal": 0
+},
+{
+"p": "Los nombres de los 3 Reyes Magos",
+"op": [
+"Melchor",
+"Bashir",
+"Baltasar",
+"Gaspar"
+],
+"mal": 1
+},
+{
+"p": "3 de estos son personajes de videojuego",
+"op": [
+"Pac-Man",
+"Lara Croft",
+"Donkey Kong",
+"Mafalda"
+],
+"mal": 3
+},
+{
+"p": "3 palabras del juego «piedra, papel o tijera»",
+"op": [
+"Piedra",
+"Grapadora",
+"Papel",
+"Tijera"
+],
+"mal": 1
+},
+{
+"p": "3 de estos productos endulzan",
+"op": [
+"Panela",
+"Estevia",
+"Levadura",
+"Miel"
+],
+"mal": 2
+},
+{
+"p": "3 de estos símbolos están en la baraja francesa",
+"op": [
+"Tréboles",
+"Corazones",
+"Diamantes",
+"Estrellas"
+],
+"mal": 3
+},
+{
+"p": "3 de estos nombres son continentes",
+"op": [
+"África",
+"Asia",
+"Australia",
+"Oceanía"
+],
+"mal": 2
+},
+{
+"p": "3 de estas son certificaciones de ventas de discos",
+"op": [
+"Disco de zafiro",
+"Disco de oro",
+"Disco de platino",
+"Disco de diamante"
+],
+"mal": 0
+}
+],
+"c5": [
+{
+"p": "One Direction lo formaban 4 de estos nombres",
+"op": [
+"Niall Horan",
+"Liam Payne",
+"Zac Efron",
+"Louis Tomlinson",
+"Harry Styles"
+],
+"mal": 2
+},
+{
+"p": "4 de estas son monedas del mundo",
+"op": [
+"Euro",
+"Samadhi",
+"Yen",
+"Dinar",
+"Quetzal"
+],
+"mal": 1
+},
+{
+"p": "4 de estas partes son del aparato digestivo",
+"op": [
+"Boca",
+"Hígado",
+"Esófago",
+"Riñón",
+"Páncreas"
+],
+"mal": 3
+},
+{
+"p": "4 de estos animales marinos respiran por branquias",
+"op": [
+"Langosta",
+"Atún",
+"Foca",
+"Pulpo",
+"Raya"
+],
+"mal": 2
+},
+{
+"p": "Una bicicleta necesita 4 de estos elementos",
+"op": [
+"Freno",
+"Manillar",
+"Cadena",
+"Pedal",
+"Motor de combustión"
+],
+"mal": 4
+},
+{
+"p": "Según el hinduismo, 4 de estos colores son de los chakras",
+"op": [
+"Negro",
+"Amarillo",
+"Naranja",
+"Verde",
+"Rojo"
+],
+"mal": 0
+},
+{
+"p": "4 de estos libros son de la saga «Crepúsculo»",
+"op": [
+"Eclipse",
+"Luna nueva",
+"Luna llena",
+"Amanecer",
+"Crepúsculo"
+],
+"mal": 2
+},
+{
+"p": "4 de estos son seres mitológicos",
+"op": [
+"Unicornio",
+"Centauro",
+"Sirena",
+"Ornitorrinco",
+"Esfinge"
+],
+"mal": 3
+},
+{
+"p": "El Sol tiene 4 de estas partes",
+"op": [
+"Meteorito",
+"Fotosfera",
+"Corona",
+"Núcleo",
+"Cromosfera"
+],
+"mal": 0
+},
+{
+"p": "4 de estos cereales se usan para hacer whisky",
+"op": [
+"Linaza",
+"Maíz",
+"Cebada",
+"Trigo",
+"Centeno"
+],
+"mal": 0
+},
+{
+"p": "4 de estos fueron mascotas de un Mundial de fútbol",
+"op": [
+"Gauchito",
+"Naranjito",
+"Footix",
+"Pique",
+"Cobi"
+],
+"mal": 4
+},
+{
+"p": "4 de estos están en la tabla periódica",
+"op": [
+"Aluminio",
+"Adamantium",
+"Uranio",
+"Plomo",
+"Radio"
+],
+"mal": 1
+},
+{
+"p": "4 de estas películas de terror son posteriores al año 2000",
+"op": [
+"El bosque",
+"It Follows",
+"La cabaña en el bosque",
+"Paranormal Activity",
+"El exorcista"
+],
+"mal": 4
+},
+{
+"p": "4 de estos nombres son razas de perro",
+"op": [
+"Shar pei",
+"Bóxer",
+"Bengalí",
+"Dálmata",
+"Schnauzer"
+],
+"mal": 2
+},
+{
+"p": "4 de estos personajes salen en «Alicia en el País de las Maravillas»",
+"op": [
+"Gato con Botas",
+"Dodo",
+"Reina de Corazones",
+"Gato de Cheshire",
+"Oruga azul"
+],
+"mal": 0
+},
+{
+"p": "4 de estos son bailes modernos",
+"op": [
+"Jazz",
+"Hip hop",
+"Breakdance",
+"Parkour",
+"Rock and roll"
+],
+"mal": 3
+},
+{
+"p": "Hay hormigas de estos 4 colores",
+"op": [
+"Negro",
+"Rojizo",
+"Añil",
+"Marrón",
+"Amarillo dorado"
+],
+"mal": 2
+},
+{
+"p": "Estos 4 fenómenos naturales pueden hacer ruido",
+"op": [
+"Trueno",
+"Lluvia",
+"Ola",
+"Arcoíris",
+"Viento"
+],
+"mal": 3
+}
+],
+"c6": [
+{
+"p": "5 de estos son elementos de un prisma",
+"op": [
+"Base",
+"Cara lateral",
+"Radio",
+"Altura",
+"Arista",
+"Vértice"
+],
+"mal": 2
+},
+{
+"p": "5 de estos libros son del Antiguo Testamento",
+"op": [
+"Números",
+"Levítico",
+"Deuteronomio",
+"Génesis",
+"Papiros",
+"Éxodo"
+],
+"mal": 4
+},
+{
+"p": "Los 5 océanos del mundo",
+"op": [
+"Índico",
+"Ártico",
+"Atlántico",
+"Antártico",
+"Pacífico",
+"Omega"
+],
+"mal": 5
+},
+{
+"p": "5 de estos son Minions",
+"op": [
+"Carl",
+"Bob",
+"Stuart",
+"Kevin",
+"Gru",
+"Dave"
+],
+"mal": 4
+},
+{
+"p": "5 de estos animales han viajado al espacio",
+"op": [
+"Mono",
+"Tortuga",
+"Perro",
+"Araña",
+"Jirafa",
+"Mosca"
+],
+"mal": 4
+},
+{
+"p": "5 de estos son tipos de dientes",
+"op": [
+"Molar",
+"De leche",
+"Gancho",
+"Premolar",
+"Incisivo",
+"Canino"
+],
+"mal": 2
+},
+{
+"p": "Según la ONU, 5 de estos países están en Oriente Medio",
+"op": [
+"Etiopía",
+"Líbano",
+"Irán",
+"Omán",
+"Catar",
+"Siria"
+],
+"mal": 0
+},
+{
+"p": "5 de estos equipos juegan la Premier League",
+"op": [
+"Arsenal",
+"Liverpool",
+"Chelsea",
+"Geelong",
+"Manchester United",
+"Everton"
+],
+"mal": 3
+},
+{
+"p": "5 de estos son tipos de escote",
+"op": [
+"Asimétrico",
+"Corazón",
+"Halter",
+"En pico",
+"Palabra de honor",
+"Bermuda"
+],
+"mal": 5
+},
+{
+"p": "5 de estos alimentos derivan de la leche",
+"op": [
+"Queso",
+"Nata",
+"Arroz",
+"Requesón",
+"Mantequilla",
+"Yogur"
+],
+"mal": 2
+},
+{
+"p": "Johnny Depp sale en 5 de estas películas",
+"op": [
+"Troya",
+"Piratas del Caribe",
+"Rango",
+"Charlie y la fábrica de chocolate",
+"Black Mass",
+"Eduardo Manostijeras"
+],
+"mal": 0
+},
+{
+"p": "5 de estas palabras nacieron con las redes sociales",
+"op": [
+"Catfish",
+"Ingle",
+"Selfi",
+"Hashtag",
+"Stalkear",
+"Tuit"
+],
+"mal": 1
+},
+{
+"p": "5 de estos animales son cuadrúpedos",
+"op": [
+"Rinoceronte",
+"Cebra",
+"Oveja",
+"Pingüino",
+"Lagarto",
+"Tigre"
+],
+"mal": 3
+},
+{
+"p": "Los nombres de los 5 dedos de la mano",
+"op": [
+"Tarso",
+"Meñique",
+"Índice",
+"Corazón",
+"Pulgar",
+"Anular"
+],
+"mal": 0
+},
+{
+"p": "5 de estos objetos funcionan con baterías",
+"op": [
+"Móvil",
+"Mando a distancia",
+"Linterna",
+"Coche",
+"Reloj automático",
+"Dron"
+],
+"mal": 4
+}
+],
+"c7": [
+{
+"p": "6 de ellos fueron escritores",
+"op": [
+"Eduardo Galeano",
+"Pablo Neruda",
+"Augusto Monterroso",
+"Truman Capote",
+"Graciliano Ramos",
+"Federico Luppi",
+"Charles Dickens"
+],
+"mal": 5
+},
+{
+"p": "6 de estas cosas están ahora en la superficie de la Luna",
+"op": [
+"Un retrato familiar",
+"Vehículos robotizados",
+"Una botella de vino",
+"Pelotas de golf",
+"Una insignia de plata",
+"Reflectores",
+"La bandera de EE. UU."
+],
+"mal": 2
+},
+{
+"p": "6 de estos son deportes de combate",
+"op": [
+"Boxeo",
+"Sumo",
+"Esgrima",
+"Kárate",
+"Judo",
+"Sambo",
+"Curling"
+],
+"mal": 6
+},
+{
+"p": "6 de estos personajes son de Street Fighter",
+"op": [
+"Blanka",
+"Vega",
+"Link",
+"Ken",
+"Ryu",
+"Sagat",
+"Chun-Li"
+],
+"mal": 2
+},
+{
+"p": "6 de estos son tipos de reloj",
+"op": [
+"De gas",
+"De cuco",
+"De péndulo",
+"De arena",
+"Digital",
+"De cuarzo",
+"De sol"
+],
+"mal": 0
+},
+{
+"p": "El oro puede ser de 6 de estos colores",
+"op": [
+"Amarillo",
+"Verde",
+"Gris",
+"Rojo",
+"Blanco",
+"Rosa",
+"Fucsia"
+],
+"mal": 6
+},
+{
+"p": "6 de estas son emociones de «Del revés (Inside Out)»",
+"op": [
+"Espanto",
+"Envidia",
+"Asco",
+"Ira",
+"Vergüenza",
+"Ennui",
+"Nostalgia"
+],
+"mal": 0
+},
+{
+"p": "6 de estos pintores nacieron en España",
+"op": [
+"Pablo Picasso",
+"César Moro",
+"Salvador Dalí",
+"Francisco de Goya",
+"Diego Velázquez",
+"Francisco de Zurbarán",
+"Joan Miró"
+],
+"mal": 1
+},
+{
+"p": "6 de estas son medidas de longitud",
+"op": [
+"Milímetro",
+"Kilómetro",
+"Decámetro",
+"Decímetro",
+"Parquímetro",
+"Centímetro",
+"Hectómetro"
+],
+"mal": 4
+},
+{
+"p": "6 de estas ciudades están en América del Sur",
+"op": [
+"Quito",
+"Sonsonate",
+"Buenos Aires",
+"Cuzco",
+"Lima",
+"Valparaíso",
+"Recife"
+],
+"mal": 1
+},
+{
+"p": "6 de estas ciudades tienen metro",
+"op": [
+"Londres",
+"Oslo",
+"San Francisco",
+"Puebla",
+"París",
+"Hong Kong",
+"Berlín"
+],
+"mal": 3
+},
+{
+"p": "6 de estos personajes los puedes ver en un circo",
+"op": [
+"Trapecista",
+"Mago",
+"Acróbata",
+"Malabarista",
+"Payaso",
+"Gladiador",
+"Contorsionista"
+],
+"mal": 5
+},
+{
+"p": "6 de estos son tubérculos",
+"op": [
+"Patata",
+"Ñame",
+"Batata",
+"Yuca",
+"Chufa",
+"Oca",
+"Zanahoria"
+],
+"mal": 6
+},
+{
+"p": "6 de estos son deportes olímpicos",
+"op": [
+"Natación",
+"Fútbol",
+"Rugby",
+"Gimnasia",
+"Yoga",
+"Tenis",
+"Piragüismo"
+],
+"mal": 4
+}
+],
+"c8": [
+{
+"p": "7 de ellos son signos del horóscopo chino",
+"op": [
+"Mono",
+"Cerdo",
+"Tigre",
+"Rata",
+"Cisne",
+"Buey",
+"Dragón",
+"Perro"
+],
+"mal": 4
+},
+{
+"p": "7 de estos son tipos de madera",
+"op": [
+"Garapa",
+"Olmo",
+"Nogal",
+"Angelim",
+"Cedro",
+"Ipé",
+"Roble",
+"Poliuretano"
+],
+"mal": 7
+},
+{
+"p": "7 de estas cantantes nacieron en los años 80",
+"op": [
+"Rihanna",
+"Nicki Minaj",
+"Taylor Swift",
+"Miley Cyrus",
+"Britney Spears",
+"Christina Aguilera",
+"Lady Gaga",
+"Katy Perry"
+],
+"mal": 3
+},
+{
+"p": "7 de ellos fueron astronautas",
+"op": [
+"Yuri Gagarin",
+"Buzz Aldrin",
+"Neil Armstrong",
+"Pete Conrad",
+"Alan Bean",
+"Eugene Cernan",
+"Harrison Schmitt",
+"Arnold Palmer"
+],
+"mal": 7
+},
+{
+"p": "7 de estos nombres son de arcángeles",
+"op": [
+"Gabriel",
+"Uriel",
+"Samuel",
+"Rafael",
+"Jehudiel",
+"Barachiel",
+"Selatiel",
+"Miguel"
+],
+"mal": 2
+},
+{
+"p": "7 de estos son equipos de la NBA",
+"op": [
+"Tennessee Titans",
+"Boston Celtics",
+"Miami Heat",
+"Detroit Pistons",
+"Los Angeles Lakers",
+"Golden State Warriors",
+"Chicago Bulls",
+"New York Knicks"
+],
+"mal": 0
+},
+{
+"p": "7 de estas son piedras preciosas o semipreciosas",
+"op": [
+"Esmeralda",
+"Cobalto",
+"Zafiro",
+"Turquesa",
+"Tanzanita",
+"Diamante",
+"Ámbar",
+"Lapislázuli"
+],
+"mal": 1
+},
+{
+"p": "7 de estas palabras son sinónimos de miedo",
+"op": [
+"Temor",
+"Terror",
+"Pánico",
+"Arrojo",
+"Canguelo",
+"Fobia",
+"Espanto",
+"Pavor"
+],
+"mal": 3
+},
+{
+"p": "7 de ellas son musas del Olimpo",
+"op": [
+"Calíope",
+"Euterpe",
+"Erato",
+"Urania",
+"Melpómene",
+"Mnemósine",
+"Terpsícore",
+"Polimnia"
+],
+"mal": 5
+},
+{
+"p": "7 de estos eran películas antes de ser musicales",
+"op": [
+"El rey león",
+"Una rubia muy legal",
+"Mary Poppins",
+"Hairspray",
+"Shrek",
+"Mamma Mia!",
+"El mago de Oz",
+"Cantando bajo la lluvia"
+],
+"mal": 5
+},
+{
+"p": "7 de estas son vacunas del calendario infantil",
+"op": [
+"Difteria",
+"Hepatitis B",
+"Tétanos",
+"Rotavirus",
+"Meningococo",
+"Triple vírica",
+"Varicela",
+"Plexular"
+],
+"mal": 7
+},
+{
+"p": "7 de ellos son DJ famosos",
+"op": [
+"Martin Garrix",
+"Björk",
+"Vintage Culture",
+"Alok",
+"Calvin Harris",
+"Marshmello",
+"Armin van Buuren",
+"David Guetta"
+],
+"mal": 1
+},
+{
+"p": "7 de estas palabras significan «gracias» en otros idiomas",
+"op": [
+"Danke",
+"Arigató",
+"Merci",
+"Shukran",
+"Gefallen",
+"Grazie",
+"Tack",
+"Gamsahamnida"
+],
+"mal": 4
+},
+{
+"p": "7 de estas son películas de Pixar",
+"op": [
+"Monstruos S.A.",
+"Ratatouille",
+"Up",
+"Buscando a Nemo",
+"Toy Story",
+"Coco",
+"Cars",
+"Shrek"
+],
+"mal": 7
+},
+{
+"p": "7 de estas palabras son llanas",
+"op": [
+"Árbol",
+"Lápiz",
+"Fácil",
+"Mesa",
+"Casa",
+"Cárcel",
+"Azúcar",
+"Canción"
+],
+"mal": 7
+},
+{
+"p": "7 de estas son frutas tropicales",
+"op": [
+"Mango",
+"Papaya",
+"Piña",
+"Guayaba",
+"Maracuyá",
+"Lichi",
+"Asaí",
+"Manzana"
+],
+"mal": 7
+}
+]
+}

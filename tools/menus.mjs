@@ -20,6 +20,6 @@ await clic('Cómo se juega'); await p.screenshot({ path: O + '08_reglas.png' });
 await clic('Volver'); await clic('Créditos'); await p.screenshot({ path: O + '09_creditos.png' });
 await clic('Volver'); await clic('Instalar app'); await p.screenshot({ path: O + '10_instalar.png' }); await clic('Cerrar');
 await clic('La historia'); await w(6000); await p.screenshot({ path: O + '11_historia.png' }); await clic('Siguiente'); await w(3000); await p.screenshot({ path: O + '11b_historia.png' });
-await clic('☰'); await clic('Jugar'); await clic('Explorar'); await w(3000); await p.screenshot({ path: O + '12_explorar.png' }); await clic('👁'); await w(1500); await p.screenshot({ path: O + '12b_1persona.png' });
+await clic('☰'); await clic('Explorar'); await w(3000); await p.screenshot({ path: O + '12_explorar.png' }); await clic('👁'); await w(1500); await p.screenshot({ path: O + '12b_1persona.png' });
 await clic('☰'); await clic('Monólogos'); await clic('Llama mi madre'); await w(4000); await p.screenshot({ path: O + '13_monologo.png' }); await clic('Saltar'); await w(2500); await p.screenshot({ path: O + '13b_fin_mono.png' });
 console.log('errores', err); await b.close();

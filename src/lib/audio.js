@@ -26,6 +26,13 @@ const FX = {
   risas: (c, d, t) => { for (let i = 0; i < 10; i++) synth.tone(c, d, t + i * 0.13, 300 + Math.random() * 200, 0.1, 'sawtooth', 0.03); synth.applause(c, d, t, 1.6, 0.15); },
   badumtss: (c, d, t) => { synth.kick(c, d, t, 0.4); synth.kick(c, d, t + 0.16, 0.4); synth.hat(c, d, t + 0.35, 0.2); },
   banner: (c, d, t) => synth.chord(c, d, t, [392, 494, 587], 0.6, 0.06),
+  bip: (c, d, t) => synth.tone(c, d, t, 1800, 0.08, 'square', 0.08),
+  bipx4: (c, d, t) => { for (let i = 0; i < 4; i++) synth.tone(c, d, t + i * 0.11, 2000, 0.07, 'square', 0.08); },
+  cables: (c, d, t) => { synth.tone(c, d, t, 300, 0.12, 'sawtooth', 0.06); synth.tone(c, d, t + 0.08, 600, 0.2, 'triangle', 0.1); },
+  q: (c, d, t) => synth.chord(c, d, t, [523, 659, 784], 0.5, 0.06),
+  banco: (c, d, t) => { synth.tone(c, d, t, 880, 0.1, 'triangle', 0.15); synth.tone(c, d, t + 0.1, 1320, 0.25, 'triangle', 0.15); },
+  bomba: (c, d, t) => { synth.kick(c, d, t, 0.5); synth.tone(c, d, t + 0.1, 110, 1.2, 'sawtooth', 0.05); },
+  suspense_bomba: (c, d, t) => synth.tone(c, d, t, 70, 1.4, 'sawtooth', 0.06),
   bote: (c, d, t) => { [523, 659, 784, 1046].forEach((f, i) => synth.tone(c, d, t + i * 0.12, f, 0.3, 'triangle', 0.15)); },
 };
 // músicas de respaldo: bucles muy sencillos generados (no imitan ninguna sintonía)
@@ -35,7 +42,15 @@ const LOOPS = {
   trilha: { bpm: 120, notas: [196, 247, 294, 247, 220, 262, 330, 262] },
 };
 
+// músicas propias del Desafío Mega Bomba (audio/musica_mb_*.mp3): si no están, bucle de respaldo
+const RESPALDO = { mb_tempo1: 'tension', mb_tempo2: 'tension', mb_tempo3: 'tension', mb_dinamica: 'tension', mb_suspense: 'trilha' };
+
 export const me = {
+  /** Golpe musical corto (audio/<clave>.mp3) con el volumen de la música; si el archivo no está, no suena nada */
+  async sting(k) {
+    if (!cfg.music) return null; const url = await findAudioFile(k); if (!url) return null;
+    const a = new Audio(url); a.volume = cfg.musicVol; a.muted = muted; vivos.add(a); a.onended = () => vivos.delete(a); a.play().catch(() => {}); return a;
+  },
   get muted() { return muted; }, get voiceOn() { return cfg.voz; },
   setMuted(v) { muted = v; localStorage.setItem('boom3d_mute', v ? '1' : '0'); vivos.forEach(a => a.muted = v); if (master) master.gain.value = v ? 0 : 1; if (v) speechSynthesis?.cancel?.(); },
   setVoice(v) { cfg.voz = v; if (!v) this.stopVoice(); },
@@ -56,7 +71,7 @@ export const me = {
     if (!url && k === 'tension' && canciones.length) url = canciones[Math.floor(Math.random() * canciones.length)];
     if (!url) url = await findAudioFile('musica_' + k);
     if (url) { const a = new Audio(url); a.loop = k !== 'cabecera'; a.volume = cfg.music ? cfg.musicVol : 0; a.muted = muted; musica = { a }; a.play().catch(() => {}); return; }
-    const L = LOOPS[k]; if (!L) return;
+    const L = LOOPS[k] || LOOPS[RESPALDO[k]]; if (!L) return;
     try {
       const [c, d] = out(); const g = c.createGain(); g.gain.value = cfg.music ? 0.5 * cfg.musicVol : 0; g.connect(d); let t = c.currentTime + 0.05, i = 0; const paso = 60 / L.bpm / 2;
       const iv = setInterval(() => { while (t < c.currentTime + 0.4) { synth.tone(c, g, t, L.notas[i % L.notas.length], paso * 0.9, 'triangle', 0.05); if (i % 4 === 0) synth.kick(c, g, t, 0.12); if (i % 2) synth.hat(c, g, t, 0.015); t += paso; i++; } }, 120);

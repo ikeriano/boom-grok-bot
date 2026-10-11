@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer-core';
+const b = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', headless: 'new', args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required'] });
+const p = await b.newPage(); await p.setViewport({ width: 1280, height: 720 });
+let err = 0; p.on('pageerror', e => { console.log('PAGEERROR', e.message); err++; });
+p.on('console', m => { if (m.type() === 'error') console.log('console.error', m.text()); });
+await p.evaluateOnNewDocument(() => { window.__suenan = []; const o = HTMLMediaElement.prototype.play; HTMLMediaElement.prototype.play = function () { window.__suenan.push(this.src.split('/').slice(-2).join('/')); return o.call(this); }; });
+await p.goto('file:///tmp/boom3d_completo/boom3d/index.html?auto&vel=2'); await p.waitForFunction('window.__plato && window.__plato.ok', { timeout: 90000 });
+await new Promise(r => setTimeout(r, 1500)); await p.mouse.click(640, 600); await new Promise(r => setTimeout(r, 3000));
+await p.evaluate(() => { window.__MB_FALLA = (r, k) => r === 1 && k === 1; window.__boom.iniciar('megabomba'); });
+await new Promise(r => setTimeout(r, 75000));
+const s = await p.evaluate(() => window.__suenan);
+console.log('audios únicos:', [...new Set(s)].join(' | '));
+console.log('errores', err); await b.close();

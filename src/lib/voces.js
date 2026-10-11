@@ -18,7 +18,8 @@ export const VOCES = {
 export const CREDITOS_VOCES = ['Voces sintéticas genéricas (Piper TTS)', ['Presentador: davefx (CC0)', 'Concursantes: sharvard (CC BY 3.0, Univ. de Edimburgo),', 'carlfm (dominio público), ald (Unlicense),', 'daniela (CC BY-SA 4.0, corpus OpenSLR 61)']];
 
 const idx = { p: null, q: null }; let base = './';
-const cargar = k => idx[k] || (idx[k] = fetch(`${base}voz/${k === 'q' ? 'q/' : ''}index.json`).then(r => r.ok ? r.json() : {}).catch(() => ({})));
+// con file:// (abrir index.html con doble clic) fetch no funciona: voz/index.js trae los mismos índices en window.__VOZIDX
+const cargar = k => idx[k] || (idx[k] = window.__VOZIDX ? Promise.resolve(window.__VOZIDX[k] || {}) : fetch(`${base}voz/${k === 'q' ? 'q/' : ''}index.json`).then(r => r.ok ? r.json() : {}).catch(() => ({})));
 let audioActual = null, ttsVoz = null, opts = { activo: () => true, volumen: () => 1, rapida: () => false, velocidad: () => 1 };
 export function configurarVoces(o) { Object.assign(opts, o); if (o.base) base = o.base; cargar('p'); cargar('q'); }
 function vozMasculina() {

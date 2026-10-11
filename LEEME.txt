@@ -65,7 +65,8 @@ TU MÚSICA, TUS LOGOS Y TUS AUDIOS (nada de esto viene incluido)
 - Voces grabadas opcionales del presentador: audio/voz/hist_intro.mp3, hist_1.mp3 … hist_13.mp3,
   hist_fin.mp3, bienvenida.mp3, walk.mp3… Si no existen, habla la voz del navegador (es-ES).
 - Formatos: mp3, ogg, wav, m4a / png, jpg, webp, svg.
-- No se incluye ningún audio ni imagen del programa real ni del APK de ¡Ahora caigo!.
+- No se incluye ningún audio ni imagen del programa real ni del APK de ¡Ahora caigo!. Desde la v1.3 los
+  EFECTOS de sonido vienen del proyecto Scratch de ¡Boom! que nos pasó Iker (ver abajo).
 
 MÁS PREGUNTAS
 Edita data/preguntas_extra.js (vienen ejemplos dentro). No hace falta recompilar.
@@ -95,3 +96,30 @@ NUEVA INTERFAZ (v1.1) — IGUAL QUE EL APK «¡AHORA CAIGO! EL JUEGO 3D»
 - Se puede instalar como app (manifest + sw.js) y funciona sin conexión.
 - La interfaz es la plantilla común /workspace/plantilla_menu (menu.css + src/lib/menu_kit.js).
   El plató sigue siendo el de ¡Boom!; no se usa ningún audio ni imagen de ¡Ahora caigo!.
+
+==================================================================
+NOVEDADES v1.3 — DESAFÍO MEGA BOMBA (basado en el proyecto Scratch original de ¡Boom!)
+==================================================================
+- Nuevo modo en Jugar → «Desafío Mega Bomba», para un jugador, con las reglas del Scratch:
+  7 bombas (4, 4, 4, 5, 6, 7 y 8 cables) · se cortan los cables de las respuestas CORRECTAS (el de la
+  falsa hace ¡BOOM!) · 10 s por cable (se reinicia tras cada corte bueno) · cuenta 3-2-1 tras cada
+  corte · premios 5.000 / 10.000 / 15.000 / 20.000 / 25.000 / 50.000 € · 3 vidas · marcador de rondas
+  · tras la 6.ª bomba: PARAR o MEGA BOMBA (desactivada ×4, explota ÷2).
+- 113 preguntas del Scratch traducidas y adaptadas al español (src/data/megabomba.json, generadas con
+  tools/megabomba_preguntas.py). No se repiten hasta agotar el mazo.
+- Grafismos: Bomba desactivada, Fin del juego, Si fallas…, Mega Bomba, marcador de dinero en dígitos
+  rojos, marcador de rondas, cuenta 3-2-1, ¡BOOM! y colores del plató: verde al acertar, rojo al
+  explotar y morado en la Mega Bomba.
+- Voz del presentador (Piper davefx): «¡Bomba cargada!», «¡Correcto!», «¡Bomba desactivada!»,
+  «Tres, dos, uno…», «¡Has perdido!», «¡Se acabó el tiempo!», etc. y las 113 preguntas.
+- Efectos del Scratch en audio/: explosion, acierto, fallo, corte, cables, tictac, bip, bipx4, tecla,
+  banner, q, banco, pop, bomba, suspense_bomba, boton (sustituyen a los sintetizados en todo el juego).
+- MÚSICAS del Scratch: NO van en la versión publicada en GitHub. Vienen dentro de la versión completa
+  (boom3d_completo.zip). Si las tienes, ponlas en audio/ con estos nombres y suenan solas:
+    musica_menu (menú) · musica_tension / musica_trilha (resto de modos)
+    musica_mb_suspense (reglas) · musica_mb_tempo1 / 2 / 3 (bombas 1-3, 4-6 y Mega Bomba)
+    musica_mb_dinamica (decisión) · mb_cortado (tras cortar) · mb_explota · mb_desactivada
+    mb_ganaste · mb_vinheta (entrada)
+  Si no están, suena la música sintetizada del juego.
+- Con doble clic en index.html (file://) ahora también suenan las voces pregeneradas (voz/index.js).
+- Pruebas: node tools/test_megabomba.mjs mega|parar|fin  (con un servidor en el puerto 8766).

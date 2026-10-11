@@ -89,7 +89,8 @@ export function creditosBoom(G) {
     ['Concursantes', eqs.flatMap((e, k) => e.jug.map((nom, i) => `${++n}. ${nom} · ${prof(nom, k, i)} (${e.nombre})`))],
     ['Juego creado por', ['Iker']], ['Basado en', ['El concurso «¡Boom!» (adaptación no oficial)', 'Formato israelí · Antena 3 / Gestmusic · Cuatro']],
     ['Plató, logo, cabecera y grafismos', ['Creación original en 3D (Three.js)']],
-    ['Música y sonidos', ['Los que subas tú desde Opciones', 'o efectos sintetizados por el propio juego']],
+    ['Música y sonidos', ['Efectos de sonido del proyecto Scratch original de ¡Boom!', 'La música que subas tú o pongas en audio/', 'o música sintetizada por el propio juego']],
+    ['Desafío Mega Bomba', ['Basado en el proyecto original de Scratch «¡Boom!»', 'Reglas y preguntas adaptadas al español']],
     CREDITOS_VOCES,
     ['Público de las gradas', ['Aplausos y risas sintetizados (no son grabaciones)']],
     ['Interfaz', ['Basada en el APK «¡Ahora Caigo! El juego 3D» de Iker']], ['Programación', ['Grok Bot']]];
