@@ -105,3 +105,24 @@ export const panel = {
     return Zi(Promise.race([new Promise(res => { inp.onkeydown = e => { if (e.key === 'Enter') res(inp.value); }; box.querySelectorAll('button').forEach(b => b.onclick = () => res(b.dataset.a === 'ok' ? inp.value : 'BOOM')); }), ...extra])).finally(() => box.remove());
   },
 };
+
+// ---------- piezas del HUD del APK de referencia: hashtag, rótulos, avisos, botones de fin, créditos ----------
+import { cfg } from '../cfg.js';
+export function leer(texto) { if (cfg.lee && cfg.voz) me.voice(null, texto, bubble.voz || {}); }
+export function hashtag(t) { const h = $('#hashtag'); h.textContent = t || ''; h.classList.toggle('on', !!t); }
+export async function rotulo(titulo, sub = '', ms = 3200) {
+  const l = $('#lower3'); const d = document.createElement('div'); d.className = 'l3'; d.innerHTML = `<b>${esc(titulo)}</b>${sub ? `<span>${esc(sub)}</span>` : ''}`;
+  l.appendChild(d); l.classList.remove('hidden'); await Dt(ms); d.classList.add('out'); setTimeout(() => { d.remove(); if (!l.children.length) l.classList.add('hidden'); }, 400);
+}
+export function limpiarRotulos() { $('#lower3').innerHTML = ''; $('#lower3').classList.add('hidden'); }
+export function toast(t, ms = 2500) { const e = $('#toast'); e.textContent = t; e.classList.remove('hidden'); clearTimeout(toast._t); toast._t = setTimeout(() => e.classList.add('hidden'), ms); }
+/** Botones de fin abajo a la derecha ({label, cls, fn}) */
+export function acciones(lista) { const a = $('#actions'); a.innerHTML = ''; (lista || []).forEach(x => { const b = document.createElement('button'); b.className = 'abtn ' + (x.cls || ''); b.textContent = x.label; b.onclick = e => { e.stopPropagation(); me.play('tecla'); a.innerHTML = ''; x.fn(); }; a.appendChild(b); }); }
+/** Créditos que suben por la derecha (despedida) */
+export async function rodarCreditos(bloques, ms = 14000) {
+  const c = $('#credits'), r = $('#creditsRoll'); r.innerHTML = bloques.map(([t, l]) => `<h4>${esc(t)}</h4>${l.map(esc).join('<br>')}`).join('');
+  c.classList.remove('hidden', 'fadeout'); r.style.transition = 'none'; r.style.transform = 'translateY(0)'; r.offsetHeight;
+  const dur = ms / VEL(); r.style.transition = `transform ${dur}ms linear`; r.style.transform = `translateY(calc(-100% - ${c.clientHeight}px))`;
+  try { await Dt(ms); } finally { c.classList.add('hidden'); }
+}
+export function ocultarCreditos() { $('#credits').classList.add('hidden'); }

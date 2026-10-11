@@ -112,6 +112,7 @@ export function grada({ rows = 6, cols = 18, width = 16, seat = 0x2a5cff, step =
   const seats = new THREE.InstancedMesh(new THREE.BoxGeometry(0.55, 0.5, 0.12), mat(seat, { roughness: 0.4 }), n);
   const bodies = new THREE.InstancedMesh(new THREE.CapsuleGeometry(0.2, 0.35, 3, 8), mat(0xffffff, { roughness: 0.8 }), n);
   const heads = new THREE.InstancedMesh(new THREE.SphereGeometry(0.12, 10, 8), mat(0xffffff, { roughness: 0.9 }), n);
+  bodies.userData.publico = true; heads.userData.publico = true;
   const pal = colorsPublico || [0xd23b3b, 0x2f5fd0, 0xf0f0f0, 0x222228, 0xe8a020, 0x2aa060, 0x8a3ab0, 0x5a5a6a, 0xe86aa0, 0x3ac0d0];
   const hair = [0x1a1008, 0x3a2412, 0x6a4020, 0xb8b0a0, 0xd0a050, 0xe0b48a, 0x9a6a46];
   const m = new THREE.Matrix4(), col = new THREE.Color(); let k = 0;

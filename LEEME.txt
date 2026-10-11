@@ -75,3 +75,23 @@ npm install  ·  npm run build  (genera js/app.js con esbuild)
 src/main.js (menú, cámara, paseo, historia, opciones) · src/juego/ (core, fases, programa, historia)
 src/plato/ (plató 3D, logo, cabecera) · src/temas.js (temáticas) · src/data/preguntas.json
 Pruebas: node tools/flujo.mjs programa clasico capturas/prueba  (requiere Chrome)
+
+==================================================================
+NUEVA INTERFAZ (v1.1) — IGUAL QUE EL APK «¡AHORA CAIGO! EL JUEGO 3D»
+==================================================================
+- Pantalla de título: logo grande sobre el plató, «EL JUEGO» y «Toca para empezar».
+- Menú principal: Jugar · Opciones · La historia de ¡Boom! · Cómo se juega · Créditos · Instalar app.
+- Jugar: Programa completo · Entrenamiento · Clásico · Explorar el plató · Monólogos del presentador
+  + rejilla «Programa especial» (Normal, Prime Time, Halloween, Niños, Nochebuena, Navidad, Carnaval,
+  Fin de Año, Verano, Especial 300 suscriptores, San Valentín, Semana Santa, Famosos, Campeones).
+- Opciones: Música, Cabecera (Mi vídeo / Plató 3D), Música de la cabecera (Elegir audio / Probar /
+  Quitar), vídeo y logo propios, Efectos, Público y Público en las gradas, Voz del presentador,
+  El presentador lee las preguntas, Velocidad de lectura, Chistes, Monólogo, Concursantes (nombres y
+  profesiones), Plató y Luces del plató, Mis canciones, Calidad gráfica, Pantalla completa.
+- Durante la partida: ☰ menú, 👁 cámara (1.ª/3.ª persona al pasear), 💡 luces, «Saltar ⏭»;
+  hashtag, rótulos de presentación, créditos que suben en la despedida y botones
+  «Jugar otra vez / Menú».
+- Escape o el botón atrás de Android vuelven a la pantalla anterior.
+- Se puede instalar como app (manifest + sw.js) y funciona sin conexión.
+- La interfaz es la plantilla común /workspace/plantilla_menu (menu.css + src/lib/menu_kit.js).
+  El plató sigue siendo el de ¡Boom!; no se usa ningún audio ni imagen de ¡Ahora caigo!.

@@ -2,9 +2,12 @@
 // No incluye audios de otros programas: usa los archivos que el usuario ponga en audio/ (o suba desde
 // Opciones) y, si no hay, efectos sintetizados genéricos.
 import { audioCtx, synth, findAudioFile, recursoEpoca } from './media.js';
+import { cfg } from '../cfg.js';
+const PUBLICO = new Set(['aplausos', 'risas']);
+let canciones = [];
 
 let muted = localStorage.getItem('boom3d_mute') === '1';
-let vozOn = localStorage.getItem('boom3d_voice') !== '0';
+
 const vivos = new Set(); let musica = null; let vozAct = null;
 let master = null;
 const out = () => { const c = audioCtx(); if (!master) { master = c.createGain(); master.connect(c.destination); } master.gain.value = muted ? 0 : 1; return [c, master]; };
@@ -31,13 +34,16 @@ const LOOPS = {
 };
 
 export const me = {
-  get muted() { return muted; }, get voiceOn() { return vozOn; },
+  get muted() { return muted; }, get voiceOn() { return cfg.voz; },
   setMuted(v) { muted = v; localStorage.setItem('boom3d_mute', v ? '1' : '0'); vivos.forEach(a => a.muted = v); if (master) master.gain.value = v ? 0 : 1; if (v) speechSynthesis?.cancel?.(); },
-  setVoice(v) { vozOn = v; localStorage.setItem('boom3d_voice', v ? '1' : '0'); if (!v) this.stopVoice(); },
+  setVoice(v) { cfg.voz = v; if (!v) this.stopVoice(); },
+  aplicarNiveles() { if (musica?.a) { musica.a.volume = cfg.music ? cfg.musicVol : 0; } if (musica?.g) musica.g.gain.value = cfg.music ? 0.5 * cfg.musicVol : 0; },
   async play(k, { volume = 1 } = {}) {
+    const pub = PUBLICO.has(k); if (pub ? !cfg.publico : !cfg.sfx) return null;
+    volume *= pub ? cfg.publicoVol : cfg.sfxVol;
     const url = await findAudioFile(k);
-    if (url) { const a = new Audio(url); a.volume = volume; a.muted = muted; vivos.add(a); a.onended = () => vivos.delete(a); a.play().catch(() => {}); return a; }
-    try { const [c, d] = out(); FX[k]?.(c, d, c.currentTime + 0.01); } catch (e) { /* sin audio */ }
+    if (url) { const a = new Audio(url); a.volume = Math.min(1, volume); a.muted = muted; vivos.add(a); a.onended = () => vivos.delete(a); a.play().catch(() => {}); return a; }
+    try { const [c, d0] = out(); const d = c.createGain(); d.gain.value = volume; d.connect(d0); FX[k]?.(c, d, c.currentTime + 0.01); setTimeout(() => d.disconnect(), 6000); } catch (e) { /* sin audio */ }
     return null;
   },
   /** Música: la subida por el usuario para esa clave, la de audio/<clave>.mp3 o un bucle sintetizado */
@@ -45,25 +51,27 @@ export const me = {
     this.stopMusic();
     let url = null;
     if (etapa) { const r = await recursoEpoca('musica', etapa); if (r) url = r.url; }
+    if (!url && k === 'tension' && canciones.length) url = canciones[Math.floor(Math.random() * canciones.length)];
     if (!url) url = await findAudioFile('musica_' + k);
-    if (url) { const a = new Audio(url); a.loop = k !== 'cabecera'; a.volume = 0.8; a.muted = muted; musica = { a }; a.play().catch(() => {}); return; }
+    if (url) { const a = new Audio(url); a.loop = k !== 'cabecera'; a.volume = cfg.music ? cfg.musicVol : 0; a.muted = muted; musica = { a }; a.play().catch(() => {}); return; }
     const L = LOOPS[k]; if (!L) return;
     try {
-      const [c, d] = out(); const g = c.createGain(); g.gain.value = 0.5; g.connect(d); let t = c.currentTime + 0.05, i = 0; const paso = 60 / L.bpm / 2;
+      const [c, d] = out(); const g = c.createGain(); g.gain.value = cfg.music ? 0.5 * cfg.musicVol : 0; g.connect(d); let t = c.currentTime + 0.05, i = 0; const paso = 60 / L.bpm / 2;
       const iv = setInterval(() => { while (t < c.currentTime + 0.4) { synth.tone(c, g, t, L.notas[i % L.notas.length], paso * 0.9, 'triangle', 0.05); if (i % 4 === 0) synth.kick(c, g, t, 0.12); if (i % 2) synth.hat(c, g, t, 0.015); t += paso; i++; } }, 120);
       musica = { iv, g };
     } catch (e) { /* */ }
   },
+  setCanciones(l) { canciones = l || []; },
   stopMusic() { if (!musica) return; if (musica.a) musica.a.pause(); if (musica.iv) { clearInterval(musica.iv); try { musica.g.disconnect(); } catch (e) { /* */ } } musica = null; },
   /** Voz del presentador: audio/voz/<clave>.mp3 si existe; si no, síntesis es-ES */
   voice(clave, texto, { pitch = 1, rate = 1.05 } = {}) {
     return new Promise(async res => {
-      if (!vozOn || muted) return setTimeout(res, 300);
+      if (!cfg.voz || muted) return setTimeout(res, 300);
       this.stopVoice();
       const url = clave ? await findAudioFile('voz/' + clave) : null;
       if (url) { const a = new Audio(url); vozAct = a; a.onended = a.onerror = () => res(); a.play().catch(() => res()); setTimeout(res, 30000); return; }
       if (!('speechSynthesis' in window) || !texto) return setTimeout(res, 300);
-      const u = new SpeechSynthesisUtterance(texto.replace(/<[^>]+>/g, '')); u.lang = 'es-ES'; u.pitch = pitch; u.rate = rate;
+      const u = new SpeechSynthesisUtterance(texto.replace(/<[^>]+>/g, '')); u.lang = 'es-ES'; u.pitch = pitch; u.rate = rate * (cfg.leeVel === 'rapida' ? 1.3 : 1);
       const v = speechSynthesis.getVoices().find(v => /^es(-|_)ES/i.test(v.lang)) || speechSynthesis.getVoices().find(v => /^es/i.test(v.lang)); if (v) u.voice = v;
       let hecho = false; const fin = () => { if (!hecho) { hecho = true; res(); } };
       u.onend = fin; u.onerror = fin; speechSynthesis.cancel(); speechSynthesis.speak(u); setTimeout(fin, 2000 + texto.length * 90);

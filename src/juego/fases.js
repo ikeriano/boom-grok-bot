@@ -1,7 +1,7 @@
 // Fases de ¡Boom! según la historia del programa que mandó el usuario. Donde el texto no detalla
 // algo, se usa una interpretación razonable (ver LEEME.txt, «Simplificaciones»).
 import { me } from '../lib/audio.js';
-import { $, esc, euros, baraja, azar, Dt, Zi, Reloj, Pool, hud, panel, banner, elegir, di, habla, textoGrande, esCorrecta, VEL, VENTAJA_TXT } from './core.js';
+import { $, esc, euros, baraja, azar, Dt, Zi, Reloj, Pool, hud, panel, banner, elegir, di, habla, textoGrande, esCorrecta, VEL, VENTAJA_TXT, leer } from './core.js';
 import { POOLS } from '../temas.js';
 
 const CABLES = [['rojo', '#ff2a2a'], ['azul', '#2a6bff'], ['amarillo', '#ffd21a'], ['verde', '#22c55e'], ['morado', '#a855f7']];
@@ -97,7 +97,7 @@ export async function bombaCables(G, ti, k) {
   G.P?.activarBomba(cristal ? 5 : k);
   hud.ronda(`${cristal ? 'BOMBA DE CRISTAL' : 'BOMBA ' + (k + 1)} · ${e.nombre.toUpperCase()} · ${euros(val)}`);
   await banner(cristal ? 'BOMBA DE CRISTAL' : `BOMBA ${k + 1}`, `Equipo ${e.nombre} · ${euros(val)} · ${T} s · ${n} cables`, 1800);
-  let turno = 0; let res = null; let blancoUsado = false;
+  let turno = 0; let res = null; let blancoUsado = false; leer(q.p);
   const r = new Reloj(G.ilimitado ? 0 : T, s => { hud.timer(s); const d = $('#qpanel .bomba-led'); if (d) d.textContent = s === Infinity ? '--:--' : `00:${String(Math.ceil(s)).padStart(2, '0')}`; if (s <= 10 && s > 0 && Math.abs(s - Math.round(s)) < 0.05) me.play('tictac'); }).start();
   const pinta = () => {
     const vv = vivos(e); const cutter = vv[turno % vv.length];
@@ -198,7 +198,7 @@ export async function bombaEstrategica(G) {
     if (G.eq[quien].humano) sel = +(await elegir(`<div class="txt">${quien === ti ? 'ELIGE TU TEMA' : `ELIGE EL TEMA DEL EQUIPO ${esc(e.nombre.toUpperCase())}`}</div><div class="btns ov">${libres.map(x => `<button data-z="${x.i}">${esc(x.t.t)}</button>`).join('')}</div>`));
     else { await Dt(1200); sel = azar(libres).i; }
     usados.add(sel); const tema = temas[sel]; const items = itemsDe(tema);
-    di(`Tema para el equipo ${esc(e.nombre)}: «${esc(tema.t)}».`, 2500);
+    di(`Tema para el equipo ${esc(e.nombre)}: «${esc(tema.t)}».`, 2500); leer(tema.t);
     G.P?.activarBomba(2);
     const r1 = await panelDiez(G, ti, tema, { items });
     G.P?.activarBomba(-1);
@@ -259,7 +259,7 @@ export async function bombaClasificatoria(G) {
     const pinta = (sel = null) => panel.set(`<div class="clas-w">${[0, 1].map(k => `<div class="mecha l${k} ${k === ti ? 'act' : ''}"><b>${esc(G.eq[k].nombre)}</b><div class="barra"><i style="width:${relojes[k].ilimitado ? 100 : relojes[k].rest / t0[k] * 100}%"></i></div><span>${relojes[k].ilimitado ? '∞' : Math.ceil(relojes[k].rest) + ' s'}</span></div>`).join('')}</div>
       <div class="q-tit">Responde <b style="color:${e.color}">${esc(quien.nombre)}</b> (${esc(e.nombre)})</div><div class="q-p">${esc(q.p)}</div>
       <div class="q-op dos">${ord.map(i => `<button data-v="${i}" ${!e.humano ? 'disabled' : ''} class="${sel === i ? (i === q.r ? 'okb' : 'kob') : ''}">${esc(q.op[i])}</button>`).join('')}</div>`, 'clas');
-    pinta();
+    pinta(); leer(q.p);
     reloj.onTick = s => { hud.timer(s); G.P?.setMecha(reloj.ilimitado ? 1 : s / t0[ti]); const b = $(`#qpanel .mecha.l${ti} i`); if (b) b.style.width = (s / t0[ti] * 100) + '%'; const sp = $(`#qpanel .mecha.l${ti} span`); if (sp) sp.textContent = Math.ceil(s) + ' s'; };
     reloj.start();
     let v;
@@ -308,7 +308,7 @@ export async function bombaBote(G, ti) {
   const pinta = (i, q, msg = '') => panel.set(`<div class="minis">${est.map((s, k) => `<button data-n="${k}" class="mini ${s} ${k === i ? 'cur' : ''}" ${vuelta === 1 || s === 'ok' || !e.humano || i != null ? 'disabled' : ''}>${k + 1}</button>`).join('')}</div>
       ${q ? `<div class="q-tit">Minibomba <b>${i + 1}</b> · ${vuelta === 1 ? 'primera vuelta' : 'segunda vuelta: el primer fallo hace explotar la bomba'}</div><div class="q-p">${esc(q.p)}</div>` : `<div class="q-tit">${msg}</div>`}`, 'bote');
   const responder = async (i) => {
-    est[i] = 'sel'; sync(); const q = pool.pick(); qs[i] = q; pinta(i, q);
+    est[i] = 'sel'; sync(); const q = pool.pick(); qs[i] = q; pinta(i, q); leer(q.p);
     let v;
     if (e.humano) v = await panel.escribir({ pasar: '¡BOOM! (pasar)' }, [r.fin.then(() => 'TIEMPO')]);
     else { await Zi(Promise.race([r.fin, espIA(1.4, 3.6)])); if (r.terminado) v = 'TIEMPO'; else { const x = Math.random(); v = x < 0.74 * (G.dificultad || 1) ? q.r.split('|')[0] : x < 0.9 ? 'BOOM' : 'zzz'; } di(`${esc(e.nombre)}: «${esc(v === 'BOOM' ? '¡Boom!' : v === 'TIEMPO' ? '…' : v)}»`, 1300); await Dt(500); }
