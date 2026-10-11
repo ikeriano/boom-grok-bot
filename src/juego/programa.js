@@ -1,3 +1,4 @@
+import { CREDITOS_VOCES } from '../lib/voces.js';
 // Flujos de juego con la organización del APK de referencia: Minijuego, Entrenamiento,
 // Programa completo y Especial Prime Time.
 import { me } from '../lib/audio.js';
@@ -28,7 +29,7 @@ const NOMBRES = {
 };
 const EQUIPOS = { rojo: 'Los Mechas', azul: 'Los Petardos', campR: 'Las Centellas', campA: 'Los Cometas', famR: 'Famosos Rojos', famA: 'Famosos Azules', ninR: 'Los Peques', ninA: 'Los Chispitas' };
 
-const CHISTES = [
+export const CHISTES = [
   '¿Sabéis por qué las bombas nunca cuentan chistes? Porque siempre acaban… ¡explotando de risa!',
   'Me han dicho que corte por lo sano… y aquí todos los cables parecen sanos.',
   '¿Qué le dice un cable rojo a uno azul? «Tranquilo, que hoy no nos corta nadie».',
@@ -89,7 +90,7 @@ export function creditosBoom(G) {
     ['Juego creado por', ['Iker']], ['Basado en', ['El concurso «¡Boom!» (adaptación no oficial)', 'Formato israelí · Antena 3 / Gestmusic · Cuatro']],
     ['Plató, logo, cabecera y grafismos', ['Creación original en 3D (Three.js)']],
     ['Música y sonidos', ['Los que subas tú desde Opciones', 'o efectos sintetizados por el propio juego']],
-    ['Voces sintéticas', ['Presentador: voz del navegador (es-ES)', 'Archivos propios en audio/voz si los añades']],
+    CREDITOS_VOCES,
     ['Público de las gradas', ['Aplausos y risas sintetizados (no son grabaciones)']],
     ['Interfaz', ['Basada en el APK «¡Ahora Caigo! El juego 3D» de Iker']], ['Programación', ['Grok Bot']]];
 }

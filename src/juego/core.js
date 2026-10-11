@@ -108,7 +108,7 @@ export const panel = {
 
 // ---------- piezas del HUD del APK de referencia: hashtag, rótulos, avisos, botones de fin, créditos ----------
 import { cfg } from '../cfg.js';
-export function leer(texto) { if (cfg.lee && cfg.voz) me.voice(null, texto, bubble.voz || {}); }
+export function leer(texto) { if (cfg.lee && cfg.voz) me.voice(null, texto, { pregunta: true }); }
 export function hashtag(t) { const h = $('#hashtag'); h.textContent = t || ''; h.classList.toggle('on', !!t); }
 export async function rotulo(titulo, sub = '', ms = 3200) {
   const l = $('#lower3'); const d = document.createElement('div'); d.className = 'l3'; d.innerHTML = `<b>${esc(titulo)}</b>${sub ? `<span>${esc(sub)}</span>` : ''}`;

@@ -16,6 +16,8 @@ import { audioCtx, recursoEpoca, guardarSubido, quitarSubido, idb as idbMedia } 
 import { $, esc, nuevoToken, check, Dt, Zi, ABORT, bubble, di, habla, hud, panel, cerrarOverlay, elegir, hashtag, limpiarRotulos, toast, acciones, ocultarCreditos, rodarCreditos } from './juego/core.js';
 import { jugarPrograma, entrenamiento, ETAPAS, reglas, leerBote, creditosBoom, PRUEBAS_ENTRENO } from './juego/programa.js';
 import { CAPITULOS, PRESENTADOR } from './juego/historia.js';
+import { CHISTES } from './juego/programa.js';
+import BASE_PREG from './data/preguntas.json';
 import * as FASES from './juego/fases.js';
 
 const params = new URLSearchParams(location.search);
@@ -388,5 +390,17 @@ addEventListener('pointerdown', function una() { if (!$('#menu').classList.conta
 setTimeout(() => $('#loading').classList.add('hidden'), 600);
 if (params.get('cam')) { $('#menu').classList.add('hidden'); show(...CAMS[params.get('cam')], true); }
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
+
+// ---------- frases para pregenerar las voces Piper (tools/frases.mjs → gen_voces.py) ----------
+window.__frases = () => {
+  const out = []; const add = (t, q = false) => { t = String(t || '').replace(/<[^>]+>/g, '').trim(); if (t) out.push({ v: 'davefx', t, q }); };
+  const P = cfg.presentador || 'Rober Mecha';
+  add(`¡Hola! Soy ${P}. Bienvenidos a la historia de ¡Boom! Empecemos por el principio.`); add('Y esta ha sido la historia de ¡Boom! ¡Gracias por acompañarme!'); CAPITULOS.forEach(c => add(c.sub));
+  MONOLOGOS.forEach(m => m.lineas.forEach(l => add(l))); CHISTES.forEach(c => add(c)); add('¡Concursante, ve hasta tu atril!');
+  Object.values(THEMES).forEach(T => { add(T.saludo); (T.extra || []).forEach(x => add(x)); });
+  const B = BASE_PREG; [...B.cables4, ...B.cables5, ...B.clasificatoria].forEach(q => add(q.p, true)); [...B.estrategica, ...B.desempate].forEach(q => add(q.t, true)); B.bote.forEach(q => add(q.p, true));
+  if (window.__vozLog) for (const f of window.__vozLog.values()) add(f.t, f.q);
+  const vistos = new Set(); return out.filter(f => { const k = f.t + '|' + f.q; if (vistos.has(k)) return false; vistos.add(k); return true; });
+};
 window.__boom = { P, api, iniciar, irMenu, Lt, camara, show, CAMS, aplicarTema, FASES, ETAPAS, ctx, reproducirCabecera, cfg };
 window.__plato = { ok: true, scene, renderer };

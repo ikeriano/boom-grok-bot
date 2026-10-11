@@ -3,6 +3,8 @@
 // Opciones) y, si no hay, efectos sintetizados genéricos.
 import { audioCtx, synth, findAudioFile, recursoEpoca } from './media.js';
 import { cfg } from '../cfg.js';
+import { decir, callar, configurarVoces } from './voces.js';
+configurarVoces({ activo: () => cfg.voz, volumen: () => 1, rapida: () => cfg.leeVel === 'rapida', velocidad: () => 1 });
 const PUBLICO = new Set(['aplausos', 'risas']);
 let canciones = [];
 
@@ -63,20 +65,19 @@ export const me = {
   },
   setCanciones(l) { canciones = l || []; },
   stopMusic() { if (!musica) return; if (musica.a) musica.a.pause(); if (musica.iv) { clearInterval(musica.iv); try { musica.g.disconnect(); } catch (e) { /* */ } } musica = null; },
-  /** Voz del presentador: audio/voz/<clave>.mp3 si existe; si no, síntesis es-ES */
-  voice(clave, texto, { pitch = 1, rate = 1.05 } = {}) {
+  /** Voz del presentador: audio/voz/<clave>.mp3 propio si existe; si no, voces Piper pregeneradas (voz/, voz/q/) y, como respaldo, síntesis masculina es-ES */
+  voice(clave, texto, { pregunta = false, voz = 'davefx' } = {}) {
+    const limpio = String(texto || '').replace(/<[^>]+>/g, '').trim();
+    if (limpio) (window.__vozLog || (window.__vozLog = new Map())).set(voz + '|' + limpio + '|' + pregunta, { v: voz, t: limpio, q: pregunta });
     return new Promise(async res => {
       if (!cfg.voz || muted) return setTimeout(res, 300);
       this.stopVoice();
       const url = clave ? await findAudioFile('voz/' + clave) : null;
       if (url) { const a = new Audio(url); vozAct = a; a.onended = a.onerror = () => res(); a.play().catch(() => res()); setTimeout(res, 30000); return; }
-      if (!('speechSynthesis' in window) || !texto) return setTimeout(res, 300);
-      const u = new SpeechSynthesisUtterance(texto.replace(/<[^>]+>/g, '')); u.lang = 'es-ES'; u.pitch = pitch; u.rate = rate * (cfg.leeVel === 'rapida' ? 1.3 : 1);
-      const v = speechSynthesis.getVoices().find(v => /^es(-|_)ES/i.test(v.lang)) || speechSynthesis.getVoices().find(v => /^es/i.test(v.lang)); if (v) u.voice = v;
-      let hecho = false; const fin = () => { if (!hecho) { hecho = true; res(); } };
-      u.onend = fin; u.onerror = fin; speechSynthesis.cancel(); speechSynthesis.speak(u); setTimeout(fin, 2000 + texto.length * 90);
+      if (!limpio) return setTimeout(res, 300);
+      await decir(limpio, { voz, pregunta }); res();
     });
   },
-  stopVoice() { if (vozAct) { vozAct.pause(); vozAct = null; } if ('speechSynthesis' in window) speechSynthesis.cancel(); },
+  stopVoice() { if (vozAct) { vozAct.pause(); vozAct = null; } callar(); },
   stopAll() { vivos.forEach(a => a.pause()); vivos.clear(); this.stopMusic(); this.stopVoice(); },
 };
