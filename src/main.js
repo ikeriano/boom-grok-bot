@@ -193,7 +193,9 @@ function Lt(p) {
     col.append(mbtn('Jugar', 'Programa completo, entrenamiento, clásico…', 'gold', () => Lt('play')), mbtn('Opciones', 'Sonido, calidad gráfica, pantalla completa', '', () => Lt('options')),
       mbtn('La historia de ¡Boom!', `${esc(cfg.presentador)} te cuenta la historia del programa`, '', () => iniciar('historia')), mbtn('Cómo se juega', 'Las reglas del concurso', '', () => Lt('help')), mbtn('Créditos', '', '', () => Lt('credits')));
     estadoMusicas().then(e => { if (pantalla !== 'main' || e.reconocidas || e.local) return; const a = mbtn('🎵 Sin músicas cargadas', 'Toca aquí para cargar las músicas del juego (Opciones → Cargar músicas)', 'aviso-mus', () => Lt('options')); a.id = 'avisoMusicas'; col.insertBefore(a, col.children[1] || null); });
-    if (!matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches) col.append(mbtn('Instalar app', 'Juega sin conexión desde tu pantalla de inicio', 'inst', instalar));
+    const enApk = location.hostname === 'appassets.androidplatform.net';
+    if (!enApk && !matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches) col.append(mbtn('Instalar app', 'Juega sin conexión desde tu pantalla de inicio', 'inst', instalar));
+    if (!enApk) col.append(mbtn('Descargar APK', 'Instala el juego en tu móvil Android', 'inst', () => window.open('https://github.com/ikeriano/boom-grok-bot/releases/latest', '_blank')));
   } else if (p === 'play') {
     col.append(mbtn('Programa completo', 'Cabecera, bombas, clasificatoria, bomba bote y despedida', 'gold', () => iniciar('programa')), mbtn('Entrenamiento', 'Practica cada bomba por separado', '', () => Lt('train')),
       mbtn('Desafío Mega Bomba', '7 bombas, 3 vidas, 10 s por cable… ¿te atreves con la Mega Bomba?', 'gold', () => iniciar('megabomba')),
